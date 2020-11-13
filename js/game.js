@@ -3,6 +3,7 @@ import Application from '../common/Application.js';
 import Renderer from './Renderer.js';
 import Physics from './Physics.js';
 import Camera from './Camera.js';
+import Player from './Player.js';
 import SceneLoader from './SceneLoader.js';
 import SceneBuilder from './SceneBuilder.js';
 
@@ -36,8 +37,17 @@ class App extends Application {
             }
         });
 
+        // Find first player.
+        this.player = null;
+        this.scene.traverse(node => {
+            if (node instanceof Player) {
+                this.player = node;
+            }
+        });
+
         this.camera.aspect = this.aspect;
         this.camera.updateProjection();
+
         this.renderer.prepare(this.scene);
     }
 
@@ -52,8 +62,10 @@ class App extends Application {
 
         if (document.pointerLockElement === this.canvas) {
             this.camera.enable();
+            this.player.enable();
         } else {
             this.camera.disable();
+            this.player.disable();
         }
     }
 
@@ -62,18 +74,23 @@ class App extends Application {
         const dt = (this.time - this.startTime) * 0.001;
         this.startTime = this.time;
 
+        if (this.player) {
+            this.player.update(dt);
+        }
+
         if (this.camera) {
-            this.camera.update(dt);
+            this.camera.update(dt, this.player);
         }
 
         if (this.physics) {
             this.physics.update(dt);
         }
+
     }
 
     render() {
         if (this.scene) {
-            this.renderer.render(this.scene, this.camera);
+            this.renderer.render(this.scene, this.camera, this.player);
         }
     }
 

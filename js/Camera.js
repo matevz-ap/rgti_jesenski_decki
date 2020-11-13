@@ -1,5 +1,6 @@
 import Utils from './Utils.js';
 import Node from './Node.js';
+import Player from './Player.js';
 
 const mat4 = glMatrix.mat4;
 const vec3 = glMatrix.vec3;
@@ -23,7 +24,7 @@ export default class Camera extends Node {
         mat4.perspective(this.projection, this.fov, this.aspect, this.near, this.far);
     }
 
-    update(dt) {
+    update(dt, player) {
         const c = this;
         const forward = vec3.set(vec3.create(),
             -Math.sin(c.rotation[1]), 0, -Math.cos(c.rotation[1]));
@@ -31,65 +32,22 @@ export default class Camera extends Node {
         const right = vec3.set(vec3.create(),
             Math.cos(c.rotation[1]), 0, -Math.sin(c.rotation[1]));
 
+        const up = vec3.set(vec3.create(), 0, 10, 0);
+
+        const down = vec3.set(vec3.create(), 0, 1, 0);
+
         // 1: add movement acceleration
-        let acc = vec3.create();
-        if (this.keys['KeyW']) {
-            vec3.add(acc, acc, forward);
-        }
-        if (this.keys['KeyS']) {
-            vec3.sub(acc, acc, forward);
-        }
-        if (this.keys['KeyD']) {
-            vec3.add(acc, acc, right);
-        }
-        if (this.keys['KeyA']) {
-            vec3.sub(acc, acc, right);
-        }
-        if (this.keys['Space'] && c.positionY == 0) {
-            this.keys['Space'] = false;
-            c.translation[1] += 2;
-            c.positionY = 20;
-        }
-
-        // 2: update velocity
-        vec3.scaleAndAdd(c.velocity, c.velocity, acc, dt * c.acceleration);
-
-        // 3: if no movement, apply friction
-        if (!this.keys['KeyW'] &&
-            !this.keys['KeyS'] &&
-            !this.keys['KeyD'] &&
-            !this.keys['KeyA'])
-        {
-            vec3.scale(c.velocity, c.velocity, 1 - c.friction);
-        }
-
-        // 4: limit speed
-        const len = vec3.len(c.velocity);
-        if (len > c.maxSpeed) {
-            vec3.scale(c.velocity, c.velocity, c.maxSpeed / len);
-        }
-
-        // Padanje
-        if(!this.keys['Space'] && c.positionY > 0) {
-            c.translation[1] -= 0.1;
-            c.positionY -= 1;
-        }
+        c.translation[0] = player.translation[0];
+        c.translation[1] = player.translation[1] + 2;
+        c.translation[2] = player.translation[2] + 4;
     }
 
     enable() {
         document.addEventListener('mousemove', this.mousemoveHandler);
-        document.addEventListener('keydown', this.keydownHandler);
-        document.addEventListener('keyup', this.keyupHandler);
     }
 
     disable() {
         document.removeEventListener('mousemove', this.mousemoveHandler);
-        document.removeEventListener('keydown', this.keydownHandler);
-        document.removeEventListener('keyup', this.keyupHandler);
-
-        for (let key in this.keys) {
-            this.keys[key] = false;
-        }
     }
 
     mousemoveHandler(e) {
@@ -134,5 +92,4 @@ Camera.defaults = {
     maxSpeed         : 3,
     friction         : 0.2,
     acceleration     : 20,
-    positionY        : 0
 };
