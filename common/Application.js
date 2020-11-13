@@ -11,12 +11,10 @@ export default class Application {
     }
 
     _initGL() {
-        // Try to create a WebGL 2.0 context.
-        // We need both a try-catch and a null check.
         this.gl = null;
         try {
             this.gl = this.canvas.getContext('webgl2', {
-                // options, such as disabling the depth buffer
+                preserveDrawingBuffer: true
             });
         } catch (error) {
         }
@@ -26,7 +24,7 @@ export default class Application {
         }
     }
 
-    _update() { 
+    _update() {
         this._resize();
         this.update();
         this.render();
@@ -34,9 +32,6 @@ export default class Application {
     }
 
     _resize() {
-        // Check for resize on RAF, because elements do not
-        // trigger a resize event. Windows do, but it might
-        // not change the size of the canvas.
         const canvas = this.canvas;
         const gl = this.gl;
 
@@ -46,7 +41,6 @@ export default class Application {
             canvas.width = canvas.clientWidth;
             canvas.height = canvas.clientHeight;
 
-            // Change the drawing region to reflect the canvas size.
             gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
 
             this.resize();
@@ -58,17 +52,11 @@ export default class Application {
     }
 
     update() {
-        // update code (input, animations, AI ..., phisics ??)
+        // update code (input, animations, AI ...)
     }
 
-    render() { //koda webGL za risanje na zaslon
+    render() {
         // render code (gl API calls)
-
-        const gl = this.gl;
-        const t = Date.now() * 0.001;
-        const r = Math.sin(t) * Math.sin(t);
-        gl.clearColor(r, 0.4, 0.9, 1.0);
-        gl.clear(gl.COLOR_BUFFER_BIT);
     }
 
     resize() {
@@ -76,10 +64,3 @@ export default class Application {
     }
 
 }
-
-// Create a new Application only after the body
-// and the canvas element are created.
-document.addEventListener('DOMContentLoaded', () => {
-    const canvas = document.querySelector('canvas');
-    const app = new Application(canvas);
-});
