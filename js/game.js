@@ -4,6 +4,7 @@ import Renderer from './Renderer.js';
 import Physics from './Physics.js';
 import Camera from './Camera.js';
 import Player from './Player.js';
+import Obstacle from './Obstacle.js';
 import SceneLoader from './SceneLoader.js';
 import SceneBuilder from './SceneBuilder.js';
 
@@ -28,7 +29,6 @@ class App extends Application {
         const builder = new SceneBuilder(scene);
         this.scene = builder.build();
         this.physics = new Physics(this.scene);
-
         // Find first camera.
         this.camera = null;
         this.scene.traverse(node => {
@@ -42,6 +42,13 @@ class App extends Application {
         this.scene.traverse(node => {
             if (node instanceof Player) {
                 this.player = node;
+            }
+        });
+
+        this.obstacle = null;
+        this.scene.traverse(node => {
+            if (node instanceof Obstacle) {
+                this.obstacle = node;
             }
         });
 
@@ -82,6 +89,10 @@ class App extends Application {
             this.camera.update(dt, this.player);
         }
 
+        if (this.obstacle) {
+            this.obstacle.update(dt);
+        }
+
         if (this.physics) {
             this.physics.update(dt);
         }
@@ -90,7 +101,7 @@ class App extends Application {
 
     render() {
         if (this.scene) {
-            this.renderer.render(this.scene, this.camera, this.player);
+            this.renderer.render(this.scene, this.camera, this.player, this.obstacle);
         }
     }
 

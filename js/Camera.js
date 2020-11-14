@@ -26,15 +26,6 @@ export default class Camera extends Node {
 
     update(dt, player) {
         const c = this;
-        const forward = vec3.set(vec3.create(),
-            -Math.sin(c.rotation[1]), 0, -Math.cos(c.rotation[1]));
-
-        const right = vec3.set(vec3.create(),
-            Math.cos(c.rotation[1]), 0, -Math.sin(c.rotation[1]));
-
-        const up = vec3.set(vec3.create(), 0, 10, 0);
-
-        const down = vec3.set(vec3.create(), 0, 1, 0);
 
         // 1: add movement acceleration
         c.translation[0] = player.translation[0];

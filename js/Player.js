@@ -105,9 +105,9 @@ Player.defaults = {
     fov              : 1.5,
     near             : 0.01,
     far              : 100,
-    velocity         : [0, 0, 0, 0],
+    velocity         : [0, 0, 0],
     mouseSensitivity : 0.002,
-    maxSpeed         : 3,
+    maxSpeed         : 4,
     friction         : 0.2,
-    acceleration     : 20,
+    acceleration     : 30,
 };
