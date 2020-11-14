@@ -20,7 +20,6 @@ export default class Obstacle extends Node {
       var o = this; //obstacle
       const down = vec3.set(vec3.create(), 0, 0.98, 0);
       const rotation = [];
-      console.log(o);
       let acc = vec3.create();
 
       o.rotation[1] += 0.01;

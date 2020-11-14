@@ -33,7 +33,7 @@ export default class Player extends Node {
         const right = vec3.set(vec3.create(),
             Math.cos(player.rotation[1]), 0, -Math.sin(player.rotation[1]));
 
-        const up = vec3.set(vec3.create(), 0, 2, 0);
+        const up = vec3.set(vec3.create(), 0, 30, 0);
 
         const down = vec3.set(vec3.create(), 0, 0.98, 0);
 
@@ -51,9 +51,15 @@ export default class Player extends Node {
         if (this.keys['KeyA']) {
           vec3.sub(acc, acc, right);
         }
-        if (this.keys['Space']) {
-            vec3.add(acc, acc, up);
+        if (this.keys['Space'] && player.jump == 0) {
+            this.keys['Space'] = false;
+            player.jump = 90;
         }
+        if (player.jump > 70) {
+            vec3.add(acc, acc, up);
+            player.jump -= 1;
+        }
+        else if (player.jump > 0) player.jump -= 1;
 
         // Gravity
         vec3.sub(acc, acc, down);
@@ -110,4 +116,5 @@ Player.defaults = {
     maxSpeed         : 4,
     friction         : 0.2,
     acceleration     : 30,
+    jump             : 0
 };
