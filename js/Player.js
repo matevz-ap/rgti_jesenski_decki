@@ -33,9 +33,10 @@ export default class Player extends Node {
         const right = vec3.set(vec3.create(),
             Math.cos(player.rotation[1]), 0, -Math.sin(player.rotation[1]));
 
-        const up = vec3.set(vec3.create(), 0, 30, 0);
+        const up = vec3.set(vec3.create(), 
+            7*player.velocity[0], 30, 7*player.velocity[2]);
 
-        const down = vec3.set(vec3.create(), 0, 0.98, 0);
+        const down = vec3.set(vec3.create(), 0, 1.5, 0);
 
         // 1: add movement acceleration
         let acc = vec3.create();
@@ -52,14 +53,13 @@ export default class Player extends Node {
           vec3.sub(acc, acc, right);
         }
         if (this.keys['Space'] && player.jump == 0) {
-            this.keys['Space'] = false;
-            player.jump = 90;
+            player.jump = 100;
         }
         if (player.jump > 70) {
             vec3.add(acc, acc, up);
             player.jump -= 1;
         }
-        else if (player.jump > 0) player.jump -= 1;
+        else if(player.jump > 0) player.jump -= 1;
 
         // Gravity
         vec3.sub(acc, acc, down);
@@ -80,6 +80,12 @@ export default class Player extends Node {
         const len = vec3.len(player.velocity);
         if (len > player.maxSpeed) {
             vec3.scale(player.velocity, player.velocity, player.maxSpeed / len);
+        }
+        //če umre
+        if (player.translation[1] < -4) {
+            player.translation[0] = player.checkpoint[0];
+            player.translation[1] = player.checkpoint[1];
+            player.translation[2] = player.checkpoint[2];
         }
     }
 
@@ -113,8 +119,9 @@ Player.defaults = {
     far              : 100,
     velocity         : [0, 0, 0],
     mouseSensitivity : 0.002,
-    maxSpeed         : 4,
+    maxSpeed         : 5,
     friction         : 0.2,
-    acceleration     : 30,
-    jump             : 0
+    acceleration     : 40,
+    jump             : 0,
+    checkpoint       : [0, 1, 0],
 };
