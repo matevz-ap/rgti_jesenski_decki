@@ -223,10 +223,10 @@
       "name": "skybox-up",
       "type": "model",
       "mesh": 0,
-      "texture": 4,
-      "translation": [0, 70, -20],
+      "texture": 2,
+      "translation": [-10, 30, -20],
       "rotation": [0, 0, 0],
-      "scale": [40, 1, 40]
+      "scale": [80, 1, 40]
     },
     { 
       "name": "skybox-down",
@@ -242,8 +242,7 @@
     "../common/images/crate-diffuse.png",
     "../common/images/grass.png",
     "../common/images/skybox/sky1.png",
-    "../common/images/slime.png",
-    "../common/images/skybox/up.png"
+    "../common/images/slime.png"
   ],
   "meshes": [
     "../common/models/cube.json",
