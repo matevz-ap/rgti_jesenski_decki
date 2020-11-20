@@ -1,3 +1,6 @@
+import Player from './Player.js';
+import Obstacle from './Obstacle.js';
+
 const vec3 = glMatrix.vec3;
 const mat4 = glMatrix.mat4;
 
@@ -10,10 +13,14 @@ export default class Physics {
     update(dt) {
         this.scene.traverse(node => {
             if (node.velocity) {
+                //console.log(node);
                 vec3.scaleAndAdd(node.translation, node.translation, node.velocity, dt);
                 node.updateTransform();
                 this.scene.traverse(other => {
-                    if (node !== other) {
+                    if (node instanceof Player && other instanceof Obstacle) {
+                        this.resolveCollisionObstacle(node, other);
+                    }
+                    else if (node !== other) {
                         this.resolveCollision(node, other);
                     }
                 });
@@ -89,6 +96,46 @@ export default class Physics {
         }
 
         vec3.add(a.translation, a.translation, minDirection);
+        a.updateTransform();
+    }
+
+    resolveCollisionObstacle(a, b) {
+        // Update bounding boxes with global translation.
+        const ta = a.getGlobalTransform();
+        const tb = b.getGlobalTransform();
+
+        const posa = mat4.getTranslation(vec3.create(), ta);
+        const posb = mat4.getTranslation(vec3.create(), tb);
+
+        const mina = vec3.add(vec3.create(), posa, a.aabb.min);
+        const maxa = vec3.add(vec3.create(), posa, a.aabb.max);
+        const minb = vec3.add(vec3.create(), posb, b.aabb.min);
+        const maxb = vec3.add(vec3.create(), posb, b.aabb.max);
+
+        // Check if there is collision.
+        const isColliding = this.aabbIntersection({
+            min: mina,
+            max: maxa
+        }, {
+            min: minb,
+            max: maxb
+        });
+
+        if (!isColliding) {
+            return;
+        }
+
+        // Move node A minimally to avoid collision.
+        const diffa = vec3.sub(vec3.create(), maxb, mina);
+        const diffb = vec3.sub(vec3.create(), maxa, minb);
+        let direction = [0, 0, 0];
+
+        console.log("p" + diffa);
+        console.log("o" + diffb);
+
+        direction[0] = diffb[0]*3;
+
+        vec3.add(a.translation, a.translation, direction);
         a.updateTransform();
     }
 

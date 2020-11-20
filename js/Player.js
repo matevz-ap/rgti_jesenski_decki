@@ -81,6 +81,14 @@ export default class Player extends Node {
         if (len > player.maxSpeed) {
             vec3.scale(player.velocity, player.velocity, player.maxSpeed / len);
         }
+
+        //checkpoint
+        if(player.translation[2] < -10 && player.checkpoint[2] != -15 && player.translation[1] > 0) {
+            console.log(player.translation);
+            player.checkpoint[0] = 0;
+            player.checkpoint[1] = 2;
+            player.checkpoint[2] = -15;
+        }
         //če umre
         if (player.translation[1] < -4) {
             player.translation[0] = player.checkpoint[0];

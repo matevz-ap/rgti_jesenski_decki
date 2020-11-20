@@ -17,18 +17,21 @@ export default class Obstacle extends Node {
     }
 
     update(dt) {
-      var o = this; //obstacle
-      const down = vec3.set(vec3.create(), 0, 0.98, 0);
-      const rotation = [];
-      let acc = vec3.create();
+        var o = this; //obstacle
+        let acc = vec3.create();
 
-      o.rotation[1] += 0.01;
-      vec3.scaleAndAdd(o.velocity, o.velocity, acc, dt * o.acceleration);
+        if(o.translation[0] > 1.5) o.smer = -0.1;
+        if(o.translation[0] < -1) o.smer = 0.1;
 
-      const len = vec3.len(o.velocity);
-        if (len > o.maxSpeed) {
-            vec3.scale(o.velocity, o.velocity, o.maxSpeed / len);
-        }
+        const smer = vec3.set(vec3.create(), o.smer, 0, 0);
+        vec3.add(acc, acc, smer);
+
+        vec3.scaleAndAdd(o.velocity, o.velocity, acc, dt * o.acceleration);
+
+        const len = vec3.len(o.velocity);
+            if (len > o.maxSpeed) {
+                vec3.scale(o.velocity, o.velocity, o.maxSpeed / len);
+            }
     }
 
 }
@@ -43,4 +46,5 @@ Obstacle.defaults = {
     maxSpeed         : 3,
     friction         : 0.2,
     acceleration     : 20,
+    smer             : 0.1,
 };
