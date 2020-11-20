@@ -9,7 +9,7 @@ import SceneLoader from './SceneLoader.js';
 import SceneBuilder from './SceneBuilder.js';
 
 var audio = document.getElementById("player");
-audio.volume = 0.01;
+audio.volume = 0;
 
 class App extends Application {
 

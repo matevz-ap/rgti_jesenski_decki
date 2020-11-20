@@ -20,7 +20,7 @@ export default class Physics {
                     if (node instanceof Player && other instanceof Obstacle) {
                         this.resolveCollisionObstacle(node, other);
                     }
-                    else if (node !== other) {
+                    else if (node !== other && !(node instanceof Obstacle)) {
                         this.resolveCollision(node, other);
                     }
                 });
@@ -132,8 +132,8 @@ export default class Physics {
         console.log("p" + diffa);
         console.log("o" + diffb);
 
-        direction[0] = b.velocity[0];
-        //a.velocity[0] += b.velocity[0]*3000*a.acceleration;
+        a.velocity[0] += b.velocity[0]*a.acceleration;
+        
         vec3.add(a.translation, a.translation, direction);
         a.updateTransform();
     }
