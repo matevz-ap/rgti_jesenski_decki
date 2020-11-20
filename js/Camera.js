@@ -14,7 +14,7 @@ export default class Camera extends Node {
         this.projection = mat4.create();
         this.updateProjection();
 
-        this.mousemoveHandler = this.mousemoveHandler.bind(this);
+        //this.mousemoveHandler = this.mousemoveHandler.bind(this);
         this.keydownHandler = this.keydownHandler.bind(this);
         this.keyupHandler = this.keyupHandler.bind(this);
         this.keys = {};
@@ -27,7 +27,6 @@ export default class Camera extends Node {
     update(dt, player) {
         const c = this;
 
-        // 1: add movement acceleration
         c.translation[0] = player.translation[0];
         c.translation[1] = player.translation[1] + 2;
         c.translation[2] = player.translation[2] + 4;
@@ -41,7 +40,7 @@ export default class Camera extends Node {
         document.removeEventListener('mousemove', this.mousemoveHandler);
     }
 
-    mousemoveHandler(e) {
+    /*mousemoveHandler(e) {
         const dx = e.movementX;
         const dy = e.movementY;
         const c = this;
@@ -61,7 +60,7 @@ export default class Camera extends Node {
         }
 
         c.rotation[1] = ((c.rotation[1] % twopi) + twopi) % twopi;
-    }
+    }*/
 
     keydownHandler(e) {
         this.keys[e.code] = true;

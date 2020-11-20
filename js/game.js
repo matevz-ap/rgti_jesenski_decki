@@ -45,10 +45,15 @@ class App extends Application {
             }
         });
 
-        this.obstacle = null;
+        this.obstacle1 = null;
+        this.obstacle2 = null;
+        this.obstacle3 = null;
+        this.obstacle4 = null;
         this.scene.traverse(node => {
-            if (node instanceof Obstacle) {
-                this.obstacle = node;
+            if(node instanceof Obstacle) {
+                if (this.obstacle1 == null) this.obstacle1 = node;
+                else if(this.obstacle2 == null) this.obstacle2 = node;
+                else if(this.obstacle3 == null) this.obstacle3 = node;
             }
         });
 
@@ -89,10 +94,12 @@ class App extends Application {
             this.camera.update(dt, this.player);
         }
 
-        if (this.obstacle) {
-            this.obstacle.update(dt);
+        if (this.obstacle3) {
+            this.obstacle1.update(dt);
+            this.obstacle2.update(dt);
+            this.obstacle3.update(dt);
         }
-
+        
         if (this.physics) {
             this.physics.update(dt);
         }
@@ -101,7 +108,8 @@ class App extends Application {
 
     render() {
         if (this.scene) {
-            this.renderer.render(this.scene, this.camera, this.player, this.obstacle);
+            this.renderer.render(this.scene, this.camera, this.player, 
+            this.obstacle1, this.obsticle2);
         }
     }
 
