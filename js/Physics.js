@@ -129,12 +129,11 @@ export default class Physics {
         const diffa = vec3.sub(vec3.create(), maxb, mina);
         const diffb = vec3.sub(vec3.create(), maxa, minb);
         let direction = [0, 0, 0];
-
         console.log("p" + diffa);
         console.log("o" + diffb);
 
-        direction[0] = diffb[0]*3;
-
+        direction[0] = b.velocity[0];
+        //a.velocity[0] += b.velocity[0]*3000*a.acceleration;
         vec3.add(a.translation, a.translation, direction);
         a.updateTransform();
     }

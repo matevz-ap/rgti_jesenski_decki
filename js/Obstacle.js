@@ -20,8 +20,8 @@ export default class Obstacle extends Node {
         var o = this; //obstacle
         let acc = vec3.create();
 
-        if(o.translation[0] > 1.5) o.smer = -0.1;
-        if(o.translation[0] < -1) o.smer = 0.1;
+        if(o.translation[0] > 2) o.smer = -0.3;
+        if(o.translation[0] < -2) o.smer = 0.3;
 
         const smer = vec3.set(vec3.create(), o.smer, 0, 0);
         vec3.add(acc, acc, smer);
@@ -43,7 +43,7 @@ Obstacle.defaults = {
     far              : 100,
     velocity         : [0, 0, 0],
     mouseSensitivity : 0.002,
-    maxSpeed         : 3,
+    maxSpeed         : 5,
     friction         : 0.2,
     acceleration     : 20,
     smer             : 0.1,
