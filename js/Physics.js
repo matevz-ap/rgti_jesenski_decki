@@ -1,5 +1,6 @@
 import Player from './Player.js';
 import Obstacle from './Obstacle.js';
+import Model from './Model.js';
 
 const vec3 = glMatrix.vec3;
 const mat4 = glMatrix.mat4;
@@ -63,6 +64,9 @@ export default class Physics {
         if (!isColliding) {
             return;
         }
+
+        //check if player is touching the floor
+        if(a instanceof Player && b instanceof Model) a.jump = 0;
 
         // Move node A minimally to avoid collision.
         const diffa = vec3.sub(vec3.create(), maxb, mina);
@@ -129,11 +133,9 @@ export default class Physics {
         const diffa = vec3.sub(vec3.create(), maxb, mina);
         const diffb = vec3.sub(vec3.create(), maxa, minb);
         let direction = [0, 0, 0];
-        console.log("p" + diffa);
-        console.log("o" + diffb);
 
         a.velocity[0] += b.velocity[0]*a.acceleration;
-        
+
         vec3.add(a.translation, a.translation, direction);
         a.updateTransform();
     }

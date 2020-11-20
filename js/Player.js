@@ -40,32 +40,46 @@ export default class Player extends Node {
 
         // 1: add movement acceleration
         let acc = vec3.create();
+        if (this.keys['KeyT']) { //key for testing
+            console.log(player.translation);
+        }
         if (this.keys['KeyW']) {
-          vec3.add(acc, acc, forward);
+            vec3.add(acc, acc, forward);
         }
         if (this.keys['KeyS']) {
-          vec3.sub(acc, acc, forward);
+            vec3.sub(acc, acc, forward);
         }
         if (this.keys['KeyD']) {
-          vec3.add(acc, acc, right);
+            vec3.add(acc, acc, right);
         }
         if (this.keys['KeyA']) {
-          vec3.sub(acc, acc, right);
+            vec3.sub(acc, acc, right);
         }
         if (this.keys['Space'] && player.jump == 0) {
-            player.jump = 100;
+            player.jump = 1;
+            player.jumping = 20;
         }
-        if (player.jump > 70) {
+        if (player.jumping > 0) {
             vec3.add(acc, acc, up);
-            player.jump -= 1;
+            player.jumping -= 1;
         }
-        else if(player.jump > 0) player.jump -= 1;
 
         // Gravity
         vec3.sub(acc, acc, down);
         
         // 2: update velocity
         vec3.scaleAndAdd(player.velocity, player.velocity, acc, dt * player.acceleration);
+        
+        //animation
+        player.animation += dt;
+        if(player.animation > 0.5) {
+            if(acc[2] != 0 && player.jump == 0) {
+                player.animation = 0;
+                if(player.rotation[2] == 0.2) player.rotation[2] = -0.2;
+                else player.rotation[2] = 0.2;
+            }
+            else player.rotation[2] = 0;
+        }
 
         // 3: if no movement, apply friction
         if (!this.keys['KeyW'] &&
@@ -83,8 +97,7 @@ export default class Player extends Node {
         }
 
         //checkpoint
-        if(player.translation[2] < -10 && player.checkpoint[2] != -15 && player.translation[1] > 0) {
-            console.log(player.translation);
+        if(player.translation[2] < -13 && player.checkpoint[2] != -15 && player.translation[1] > 0) {
             player.checkpoint[0] = 0;
             player.checkpoint[1] = 2;
             player.checkpoint[2] = -15;
@@ -121,15 +134,13 @@ export default class Player extends Node {
 }
 
 Player.defaults = {
-    aspect           : 1,
-    fov              : 1.5,
-    near             : 0.01,
-    far              : 100,
     velocity         : [0, 0, 0],
     mouseSensitivity : 0.002,
     maxSpeed         : 5,
     friction         : 0.2,
     acceleration     : 40,
     jump             : 0,
+    jumping          : 0,
     checkpoint       : [0, 1, 0],
+    animation        : 0,
 };
