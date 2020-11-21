@@ -21,11 +21,12 @@ export default class Physics {
                     if (node instanceof Player && other instanceof Obstacle) {
                         this.resolveCollisionObstacle(node, other);
                     }
-                    else if (node !== other && !(node instanceof Obstacle)) {
+                    if (node !== other && !(node instanceof Obstacle)) {
                         this.resolveCollision(node, other);
                     }
                 });
             }
+        
         });
     }
 
@@ -66,7 +67,11 @@ export default class Physics {
         }
 
         //check if player is touching the floor
-        if(a instanceof Player && b instanceof Model) a.jump = 0;
+        if((a instanceof Player && b instanceof Model) && (posa[1]>posb[1])){
+            a.jump = 0; // if player touch floor player can jump again uga buga
+            a.acceleration = 40; //reset to defaul acceleration after contact with a bouncy obstacle
+            a.gravity = 1.5; //reset to defaul acceleration after contact with a bouncy obstacle
+        } 
 
         // Move node A minimally to avoid collision.
         const diffa = vec3.sub(vec3.create(), maxb, mina);
@@ -129,15 +134,26 @@ export default class Physics {
             return;
         }
 
-        // Move node A minimally to avoid collision.
-        const diffa = vec3.sub(vec3.create(), maxb, mina);
-        const diffb = vec3.sub(vec3.create(), maxa, minb);
-        let direction = [0, 0, 0];
+        if(a instanceof Player && b instanceof Obstacle  && (posa[1]>posb[1]) && !b.bounce){
+            // Move node A minimally to avoid collision.
+            a.jump = 0;
+            const diffa = vec3.sub(vec3.create(), maxb, mina);
+            const diffb = vec3.sub(vec3.create(), maxa, minb);
+            let direction = [0,0,0];
 
-        a.velocity[0] += b.velocity[0]*a.acceleration;
+            a.velocity[0] += b.velocity[0]*a.acceleration;
 
-        vec3.add(a.translation, a.translation, direction);
-        a.updateTransform();
+            vec3.add(a.translation, a.translation, direction);
+            a.updateTransform();
+        } 
+        else if(a instanceof Player && b instanceof Obstacle  && (posa[1]>posb[1]) && b.bounce){ //we dont need to move node A minimally to avoid collision, because player jumps before that can happen
+            a.jump = 1;
+            a.jumping = 200;
+            a.acceleration = 200;
+            a.gravity = 5;
+            //we reset gravity and acceleration after contact with model -- normal floor 
+        }
+         
     }
 
 }

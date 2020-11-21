@@ -36,7 +36,7 @@ export default class Player extends Node {
         const up = vec3.set(vec3.create(), 
             7*player.velocity[0], 30, 7*player.velocity[2]);
 
-        const down = vec3.set(vec3.create(), 0, 1.5, 0);
+        const down = vec3.set(vec3.create(), 0, player.gravity, 0);
 
         // 1: add movement acceleration
         let acc = vec3.create();
@@ -96,14 +96,26 @@ export default class Player extends Node {
             vec3.scale(player.velocity, player.velocity, player.maxSpeed / len);
         }
 
-        //checkpoint
-        if(player.translation[2] < -13 && player.checkpoint[2] != -15 && player.translation[1] > 0) {
+        //checkpoint1
+        if(player.translation[2] < -13 && player.translation[2] > -58 && player.checkpoint[2] != -15 && player.translation[1] > 0) {
             player.checkpoint[0] = 0;
             player.checkpoint[1] = 2;
             player.checkpoint[2] = -15;
         }
+        //checkpoint2
+        else if(player.translation[2] < -58 && player.checkpoint[2] != -60 && player.translation[1] > 0) {
+            player.checkpoint[0] = 0;
+            player.checkpoint[1] = 2;
+            player.checkpoint[2] = -60;
+        }
+        //checkpoint3
+        else if(player.translation[2] < -92 && player.checkpoint[2] != -94 && player.translation[1] > 0) {
+            player.checkpoint[0] = 0;
+            player.checkpoint[1] = 6;
+            player.checkpoint[2] = -94;
+        }
         //če umre
-        if (player.translation[1] < -4) {
+        if (player.translation[1] < player.checkpoint[1]-4) {
             player.translation[0] = player.checkpoint[0];
             player.translation[1] = player.checkpoint[1];
             player.translation[2] = player.checkpoint[2];
@@ -143,4 +155,5 @@ Player.defaults = {
     jumping          : 0,
     checkpoint       : [0, 1, 0],
     animation        : 0,
+    gravity          : 1.5
 };
