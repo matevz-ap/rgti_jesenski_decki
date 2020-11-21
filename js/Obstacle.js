@@ -53,6 +53,7 @@ Obstacle.defaults = {
     acceleration     : 20,
     smer             : 0.1,
     bounce           : false,
-    static           : false
+    static           : false,
+    name             : "default"
     
 };

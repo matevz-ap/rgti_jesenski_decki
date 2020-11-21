@@ -13,7 +13,7 @@ export default class Physics {
 
     update(dt) {
         this.scene.traverse(node => {
-            if (node.velocity) {
+            if (node.velocity ) {
                 //console.log(node);
                 vec3.scaleAndAdd(node.translation, node.translation, node.velocity, dt);
                 node.updateTransform();
@@ -139,6 +139,7 @@ export default class Physics {
             a.jump = 0;
             const diffa = vec3.sub(vec3.create(), maxb, mina);
             const diffb = vec3.sub(vec3.create(), maxa, minb);
+            
             let direction = [0,0,0];
 
             a.velocity[0] += b.velocity[0]*a.acceleration;
@@ -150,7 +151,7 @@ export default class Physics {
             a.jump = 1;
             a.jumping = 200;
             a.acceleration = 200;
-            a.gravity = 5;
+            a.gravity = 1.5;
             //we reset gravity and acceleration after contact with model -- normal floor 
         }
          

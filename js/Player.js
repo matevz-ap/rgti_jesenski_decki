@@ -57,7 +57,7 @@ export default class Player extends Node {
         }
         if (this.keys['Space'] && player.jump == 0) {
             player.jump = 1;
-            player.jumping = 20;
+            player.jumping = 30;
         }
         if (player.jumping > 0) {
             vec3.add(acc, acc, up);
@@ -66,6 +66,7 @@ export default class Player extends Node {
 
         // Gravity
         vec3.sub(acc, acc, down);
+    
         
         // 2: update velocity
         vec3.scaleAndAdd(player.velocity, player.velocity, acc, dt * player.acceleration);
