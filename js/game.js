@@ -55,28 +55,19 @@ class App extends Application {
         this.obstacle5 = null;
         this.obstacle6 = null;
         this.obstacle7 = null;
+        this.obstacle8 = null;
+        this.obstacle9 = null;
         this.scene.traverse(node => {
-            if(node instanceof Obstacle) {
+            if(node instanceof Obstacle && node.name != "static") {
                 if (this.obstacle1 == null) this.obstacle1 = node;
                 else if(this.obstacle2 == null) this.obstacle2 = node;
                 else if(this.obstacle3 == null) this.obstacle3 = node;
-                else if(this.obstacle4 == null){
-                    this.obstacle4 = node;
-                    this.obstacle4.bounce = true;
-                }
-                else if(this.obstacle5 == null){
-                    this.obstacle5 = node;
-                    this.obstacle5.bounce = true;
-                }
-                else if(this.obstacle6 == null){
-                    this.obstacle6 = node;
-                    this.obstacle6.bounce = true;
-                }
-                else if(this.obstacle7 == null){
-                    this.obstacle7 = node;
-                    this.obstacle7.bounce = true;
-                    this.obstacle7.static = true;
-                }   
+                else if(this.obstacle4 == null) this.obstacle4 = node;
+                else if(this.obstacle5 == null) this.obstacle5 = node;
+                else if(this.obstacle6 == null) this.obstacle6 = node;
+                else if(this.obstacle7 == null) this.obstacle7 = node;
+                else if(this.obstacle8 == null) this.obstacle8 = node;
+                else if(this.obstacle9 == null )this.obstacle9 = node;    
             }
         });
 
@@ -117,7 +108,7 @@ class App extends Application {
             this.camera.update(dt, this.player);
         }
 
-        if (this.obstacle3) {
+        if (this.obstacle9) {
             this.obstacle1.update(dt);
             this.obstacle2.update(dt);
             this.obstacle3.update(dt);
@@ -125,7 +116,11 @@ class App extends Application {
             this.obstacle5.update(dt);
             this.obstacle6.update(dt);
             this.obstacle7.update(dt);
+            this.obstacle8.update(dt);
+            this.obstacle9.update(dt);
+           
         }
+        
         
         if (this.physics) {
             this.physics.update(dt);

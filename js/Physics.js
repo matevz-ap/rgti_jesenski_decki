@@ -147,7 +147,7 @@ export default class Physics {
             vec3.add(a.translation, a.translation, direction);
             a.updateTransform();
         } 
-        else if(a instanceof Player && b instanceof Obstacle  && (posa[1]>posb[1]) && b.bounce){ //we dont need to move node A minimally to avoid collision, because player jumps before that can happen
+        else if(a instanceof Player && b instanceof Obstacle  && (posa[1]>posb[1]) && b.bounce){ //FOR BOUNCY objects we dont need to move node A minimally to avoid collision, because player jumps before that can happen
             a.jump = 1;
             a.jumping = 200;
             a.acceleration = 200;

@@ -17,10 +17,11 @@
         "min": [-0.5, -0.5, -0.5],
         "max": [0.5, 0.5, 0.5]
       },
-      "translation": [0, 4, 0],
+      "translation": [0, 9, -94],
       "scale": [1, 1, 1]
     },
     {
+      "name": "left2right",
       "type": "obstacle",
       "mesh": 0,
       "texture": 1,
@@ -195,7 +196,7 @@
       "scale": [3, 0.2, 10]
     },
     {
-      "name": "long-o-1",
+      "name": "left2right",
       "type": "obstacle",
       "mesh": 0,
       "texture": 1,
@@ -208,7 +209,7 @@
       "scale": [1, 2, 1]
     },
     {
-      "name": "long-o-2",
+      "name": "left2right",
       "type": "obstacle",
       "mesh": 0,
       "texture": 1,
@@ -221,58 +222,74 @@
       "scale": [1, 2, 1]
     },
     {
-      "name": "DynamicBouncyObject",
+      "name": "left2right",
       "type": "obstacle",
       "mesh": 0,
       "texture": 1,
       "aabb": {
-        "min": [-1, 0, -1],
-        "max": [1, 0, 1]
+        "min": [-1, -2, -1],
+        "max": [1, 2, 1]
       },
-      "translation": [0, 0, -72],
+      "translation": [1, 2, -62],
       "rotation": [0, 0, 0],
-      "scale": [1, 0.2, 1]   
+      "scale": [1, 2, 1]
     },
     {
-      "name": "DynamicBouncyObject",
+      "name": "left2right",
       "type": "obstacle",
       "mesh": 0,
-      "texture": 1,
+      "texture": 4,
       "aabb": {
         "min": [-1, 0, -1],
         "max": [1, 0, 1]
       },
-      "translation": [0, 0, -77],
+      "translation": [2, 0, -72],
       "rotation": [0, 0, 0],
-      "scale": [1, 0.2, 1]     
+      "scale": [1, 0.2, 1],
+      "bounce": true   
     },
     {
-      "name": "DynamicBouncyObject",
+      "name": "left2right",
       "type": "obstacle",
       "mesh": 0,
-      "texture": 1,
+      "texture": 4,
       "aabb": {
         "min": [-1, 0, -1],
         "max": [1, 0, 1]
       },
-      "translation": [0, 0, -82],
+      "translation": [-3, 0, -77],
       "rotation": [0, 0, 0],
-      "scale": [1, 0.2, 1]      
+      "scale": [1, 0.2, 1],
+      "bounce": true        
     },
     {
-      "name": "StaticBouncyObject",
+      "name": "left2right",
       "type": "obstacle",
       "mesh": 0,
-      "texture": 1,
+      "texture": 4,
       "aabb": {
         "min": [-1, 0, -1],
         "max": [1, 0, 1]
       },
-      "translation": [0, 3.5, -87],
+      "translation": [2, 0, -82],
       "rotation": [0, 0, 0],
-      "scale": [1, 0.2, 1]    
+      "scale": [1, 0.2, 1] ,
+      "bounce": true        
     },
-
+    {
+      "name": "left2right",
+      "type": "obstacle",
+      "mesh": 0,
+      "texture": 4,
+      "aabb": {
+        "min": [-1, 0, -1],
+        "max": [1, 0, 1]
+      },
+      "translation": [-3, 3.5, -87],
+      "rotation": [0, 0, 0],
+      "scale": [1, 0.2, 1] ,
+      "bounce": true      
+    },
     {
       "name": "checkpoint-wide",
       "type": "model",
@@ -286,7 +303,89 @@
       "rotation": [0, 0, 3.14],
       "scale": [10, 0.2, 3]
     },
-
+    {
+      "name": "static",
+      "type": "obstacle",
+      "mesh": 0,
+      "texture": 4,
+      "aabb": {
+        "min": [-1, 0, -1],
+        "max": [1, 0, 1]
+      },
+      "translation": [-3, 5, -101],
+      "rotation": [0, 0, 0],
+      "scale": [1, 0.2, 1] ,
+      "bounce": true      
+    },
+    {
+      "name": "static",
+      "type": "obstacle",
+      "mesh": 0,
+      "texture": 4,
+      "aabb": {
+        "min": [-1, 0, -1],
+        "max": [1, 0, 1]
+      },
+      "translation": [4, 7, -106],
+      "rotation": [0, 0, 0],
+      "scale": [1, 0.2, 1] ,
+      "bounce": true      
+    },
+    {
+      "name": "static",
+      "type": "obstacle",
+      "mesh": 0,
+      "texture": 4,
+      "aabb": {
+        "min": [-1, 0, -1],
+        "max": [1, 0, 1]
+      },
+      "translation": [-3, 9, -111],
+      "rotation": [0, 0, 0],
+      "scale": [1, 0.2, 1] ,
+      "bounce": true      
+    },
+    {
+      "name": "static",
+      "type": "obstacle",
+      "mesh": 0,
+      "texture": 4,
+      "aabb": {
+        "min": [-1, 0, -1],
+        "max": [1, 0, 1]
+      },
+      "translation": [4, 11, -115],
+      "rotation": [0, 0, 0],
+      "scale": [1, 0.2, 1] ,
+      "bounce": true      
+    },
+    {
+      "name": "left2right",
+      "type": "obstacle",
+      "mesh": 0,
+      "texture": 4,
+      "aabb": {
+        "min": [-1, 0, -1],
+        "max": [1, 0, 1]
+      },
+      "translation": [-3, -1, -130],
+      "rotation": [0, 0, 0],
+      "scale": [1, 0.2, 1] ,
+      "bounce": true      
+    },
+    {
+      "name": "checkpoint-wide",
+      "type": "model",
+      "mesh": 0,
+      "texture": 0,
+      "aabb": {
+        "min": [-10, 0, -3],
+        "max": [10, 0.2, 3]
+      },
+      "translation": [0, 0, -140],
+      "rotation": [0, 0, 3.14],
+      "scale": [10, 0.2, 3]
+    },
     { 
       "name": "skybox-left",
       "type": "model",
@@ -301,7 +400,7 @@
       "type": "model",
       "mesh": 0,
       "texture": 2,
-      "translation": [0, 10, -120],
+      "translation": [0, 10, -160],
       "rotation": [0, 1.57, 3.14],
       "scale": [1, 20, 40]
     },
@@ -347,7 +446,8 @@
     "../common/images/floor.png",
     "../common/images/pop.png",
     "../common/images/skybox/sky1.png",
-    "../common/images/slime.png"
+    "../common/images/slime.png",
+    "../common/images/bounce.png"
   ],
   "meshes": [
     "../common/models/cube.json",

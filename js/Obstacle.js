@@ -19,7 +19,7 @@ export default class Obstacle extends Node {
     update(dt) {
     
         var o = this; //obstacle
-        if(!o.static){
+        if(o.name == "left2right"){
             let acc = vec3.create();
 
             if(o.translation[0] > 2) o.smer = -0.3;

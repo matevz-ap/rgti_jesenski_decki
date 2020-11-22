@@ -40,6 +40,7 @@ export default class Player extends Node {
 
         // 1: add movement acceleration
         let acc = vec3.create();
+        
         if (this.keys['KeyT']) { //key for testing
             console.log(player.translation);
         }
@@ -58,6 +59,8 @@ export default class Player extends Node {
         if (this.keys['Space'] && player.jump == 0) {
             player.jump = 1;
             player.jumping = 30;
+
+            
         }
         if (player.jumping > 0) {
             vec3.add(acc, acc, up);
@@ -104,17 +107,19 @@ export default class Player extends Node {
             player.checkpoint[2] = -15;
         }
         //checkpoint2
-        else if(player.translation[2] < -58 && player.checkpoint[2] != -60 && player.translation[1] > 0) {
+        else if(player.translation[2] < -64 && player.checkpoint[2] != -66 && player.translation[1] > 0) {
             player.checkpoint[0] = 0;
             player.checkpoint[1] = 2;
-            player.checkpoint[2] = -60;
+            player.checkpoint[2] = -66;
         }
+        /*
         //checkpoint3
         else if(player.translation[2] < -92 && player.checkpoint[2] != -94 && player.translation[1] > 0) {
             player.checkpoint[0] = 0;
             player.checkpoint[1] = 6;
             player.checkpoint[2] = -94;
         }
+        */
         //če umre
         if (player.translation[1] < player.checkpoint[1]-4) {
             player.translation[0] = player.checkpoint[0];
