@@ -57,6 +57,12 @@ class App extends Application {
         this.obstacle7 = null;
         this.obstacle8 = null;
         this.obstacle9 = null;
+        this.obstacle10 = null;
+        this.obstacle11 = null;
+        this.obstacle12 = null;
+        this.obstacle13 = null;
+        this.obstacle14 = null;
+        this.obstacle15 = null;
         this.scene.traverse(node => {
             if(node instanceof Obstacle && node.name != "static") {
                 if (this.obstacle1 == null) this.obstacle1 = node;
@@ -67,7 +73,13 @@ class App extends Application {
                 else if(this.obstacle6 == null) this.obstacle6 = node;
                 else if(this.obstacle7 == null) this.obstacle7 = node;
                 else if(this.obstacle8 == null) this.obstacle8 = node;
-                else if(this.obstacle9 == null )this.obstacle9 = node;    
+                else if(this.obstacle9 == null )this.obstacle9 = node;
+                else if(this.obstacle10 == null )this.obstacle10 = node;   
+                else if(this.obstacle11 == null )this.obstacle11 = node;   
+                else if(this.obstacle12 == null )this.obstacle12 = node;   
+                else if(this.obstacle13 == null )this.obstacle13 = node;   
+                else if(this.obstacle14 == null )this.obstacle14 = node; 
+                else if(this.obstacle15 == null )this.obstacle15 = node;           
             }
         });
 
@@ -118,6 +130,12 @@ class App extends Application {
             this.obstacle7.update(dt);
             this.obstacle8.update(dt);
             this.obstacle9.update(dt);
+            this.obstacle10.update(dt);
+            this.obstacle11.update(dt);
+            this.obstacle12.update(dt);
+            this.obstacle13.update(dt);
+            this.obstacle14.update(dt);
+            this.obstacle15.update(dt);
            
         }
         

@@ -101,27 +101,29 @@ export default class Player extends Node {
         }
 
         //checkpoint1
-        if(player.translation[2] < -13 && player.translation[2] > -58 && player.checkpoint[2] != -15 && player.translation[1] > 0) {
+        if(player.translation[2] < -13 && player.translation[2] > -64 && player.checkpoint[2] != -15 && player.translation[1] > 0) {
             player.checkpoint[0] = 0;
             player.checkpoint[1] = 2;
             player.checkpoint[2] = -15;
         }
         //checkpoint2
-        else if(player.translation[2] < -64 && player.checkpoint[2] != -66 && player.translation[1] > 0) {
+        else if(player.translation[2] < -64 && player.translation[2] > -137 && player.checkpoint[2] != -66 && player.translation[1] > 0) {
             player.checkpoint[0] = 0;
             player.checkpoint[1] = 2;
             player.checkpoint[2] = -66;
         }
-        /*
         //checkpoint3
-        else if(player.translation[2] < -92 && player.checkpoint[2] != -94 && player.translation[1] > 0) {
+        else if(player.translation[2] < -137 && player.checkpoint[2] != -139 && player.translation[1] > 0) {
             player.checkpoint[0] = 0;
-            player.checkpoint[1] = 6;
-            player.checkpoint[2] = -94;
+            player.checkpoint[1] = 2;
+            player.checkpoint[2] = -139;
         }
-        */
+        if(player.translation[2]<-139){
+            player.maxSpeed = 8.4;
+        }
+
         //če umre
-        if (player.translation[1] < player.checkpoint[1]-4) {
+        if (player.translation[1] < player.checkpoint[1]-5) {
             player.translation[0] = player.checkpoint[0];
             player.translation[1] = player.checkpoint[1];
             player.translation[2] = player.checkpoint[2];
