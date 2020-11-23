@@ -238,40 +238,40 @@
       "name": "left2right",
       "type": "obstacle",
       "mesh": 3,
-      "texture": 1,
+      "texture": 6,
       "aabb": {
         "min": [-1, -2, -1],
         "max": [1, 2, 1]
       },
       "translation": [2, 0, -54],
       "rotation": [0, 0, 0],
-      "scale": [0.5, 0.5, 0.5]
+      "scale": [0.7, 0.7, 0.7]
     },
     {
       "name": "left2right",
       "type": "obstacle",
       "mesh": 3,
-      "texture": 1,
+      "texture": 6,
       "aabb": {
         "min": [-1, -2, -1],
         "max": [1, 2, 1]
       },
       "translation": [-3, 0, -58],
       "rotation": [0, 0, 0],
-      "scale": [0.5, 0.5, 0.5]
+      "scale": [0.7, 0.7, 0.7]
     },
     {
       "name": "left2right",
       "type": "obstacle",
       "mesh": 3,
-      "texture": 1,
+      "texture": 6,
       "aabb": {
         "min": [-1, -2, -1],
         "max": [1, 2, 1]
       },
       "translation": [1, 0, -62],
       "rotation": [0, 0, 0],
-      "scale": [0.5, 0.5, 0.5]
+      "scale": [0.7, 0.7, 0.7]
     },
     {
       "name": "left2right",
@@ -566,7 +566,8 @@
     "../common/images/skybox/sky1.png",
     "../common/images/slime.png",
     "../common/images/bounce.png",
-    "../common/images/wall1.png"
+    "../common/images/wall.png",
+    "../common/images/donutTexture.png"
   ],
   "meshes": [
     "../common/models/cube.json",
