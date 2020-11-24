@@ -63,6 +63,14 @@ class App extends Application {
         this.obstacle13 = null;
         this.obstacle14 = null;
         this.obstacle15 = null;
+        this.obstacle16 = null;
+        this.obstacle17 = null;
+        this.obstacle18 = null;
+        this.obstacle19 = null;
+        this.obstacle20 = null;
+        this.obstacle21 = null;
+        this.obstacle22 = null;
+        this.obstacle23 = null;
         this.scene.traverse(node => {
             if(node instanceof Obstacle && node.name != "static") {
                 if (this.obstacle1 == null) this.obstacle1 = node;
@@ -79,8 +87,16 @@ class App extends Application {
                 else if(this.obstacle12 == null )this.obstacle12 = node;   
                 else if(this.obstacle13 == null )this.obstacle13 = node;   
                 else if(this.obstacle14 == null )this.obstacle14 = node; 
-                else if(this.obstacle15 == null )this.obstacle15 = node;           
-            }
+                else if(this.obstacle15 == null )this.obstacle15 = node;
+                else if(this.obstacle16 == null )this.obstacle16 = node;
+                else if(this.obstacle17 == null )this.obstacle17 = node;
+                else if(this.obstacle18 == null )this.obstacle18 = node; 
+                else if(this.obstacle19 == null )this.obstacle19 = node;
+                else if(this.obstacle20 == null )this.obstacle20 = node;   
+                else if(this.obstacle21 == null )this.obstacle21 = node;  
+                else if(this.obstacle22 == null )this.obstacle22 = node;  
+                else if(this.obstacle23 == null )this.obstacle23 = node;           
+            }                  
         });
 
         this.camera.aspect = this.aspect;
@@ -136,6 +152,14 @@ class App extends Application {
             this.obstacle13.update(dt);
             this.obstacle14.update(dt);
             this.obstacle15.update(dt);
+            this.obstacle16.update(dt);
+            this.obstacle17.update(dt);
+            this.obstacle18.update(dt);
+            this.obstacle19.update(dt);
+            this.obstacle20.update(dt);
+            this.obstacle21.update(dt);
+            this.obstacle22.update(dt);
+            this.obstacle23.update(dt);
            
         }
         

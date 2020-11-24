@@ -69,7 +69,6 @@ export default class Player extends Node {
 
         // Gravity
         vec3.sub(acc, acc, down);
-    
         
         // 2: update velocity
         vec3.scaleAndAdd(player.velocity, player.velocity, acc, dt * player.acceleration);
@@ -100,33 +99,48 @@ export default class Player extends Node {
             vec3.scale(player.velocity, player.velocity, player.maxSpeed / len);
         }
 
-        //checkpoint1
-        if(player.translation[2] < -13 && player.translation[2] > -64 && player.checkpoint[2] != -15 && player.translation[1] > 0) {
+        //checkpoint4
+        if(player.translation[2] < -290 && player.checkpoint[2] != -292 && player.translation[1] > 0) {
             player.checkpoint[0] = 0;
             player.checkpoint[1] = 2;
-            player.checkpoint[2] = -15;
-        }
-        //checkpoint2
-        else if(player.translation[2] < -64 && player.translation[2] > -137 && player.checkpoint[2] != -66 && player.translation[1] > 0) {
-            player.checkpoint[0] = 0;
-            player.checkpoint[1] = 2;
-            player.checkpoint[2] = -66;
+            player.checkpoint[2] = -292;
         }
         //checkpoint3
-        else if(player.translation[2] < -137 && player.checkpoint[2] != -139 && player.translation[1] > 0) {
+        else if(player.translation[2] < -137 &&  player.translation[2] > -290 && player.checkpoint[2] != -139 && player.translation[1] > 0) {
             player.checkpoint[0] = 0;
             player.checkpoint[1] = 2;
             player.checkpoint[2] = -139;
         }
+         //checkpoint2
+         else if(player.translation[2] < -64 && player.translation[2] > -137 && player.checkpoint[2] != -66 && player.translation[1] > 0) {
+            player.checkpoint[0] = 0;
+            player.checkpoint[1] = 2;
+            player.checkpoint[2] = -66;
+        }
+        //checkpoint1
+        else if(player.translation[2] < -13 && player.translation[2] > -64 && player.checkpoint[2] != -15 && player.translation[1] > 0) {
+            player.checkpoint[0] = 0;
+            player.checkpoint[1] = 2;
+            player.checkpoint[2] = -15;
+        }
+        
+        //SPPEEEEEEEED
         if(player.translation[2]<-139){
-            player.maxSpeed = 8.4;
+            player.maxSpeed = 12;
+            player.acceleration = 100;
+        }
+        //JUUUUUMP
+        if(player.translation[2]<-292){
+            player.maxSpeed = 7;
+            player.acceleration = 40;
         }
 
         //če umre
-        if (player.translation[1] < player.checkpoint[1]-5) {
+        if (player.translation[1] < player.checkpoint[1]-5 || player.dead) {
             player.translation[0] = player.checkpoint[0];
             player.translation[1] = player.checkpoint[1];
             player.translation[2] = player.checkpoint[2];
+            player.dead = false;
         }
     }
 
@@ -163,5 +177,6 @@ Player.defaults = {
     jumping          : 0,
     checkpoint       : [0, 1, 0],
     animation        : 0,
-    gravity          : 1.5
+    gravity          : 1.5,
+    dead             : false
 };

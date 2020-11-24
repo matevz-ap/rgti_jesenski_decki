@@ -54,6 +54,7 @@ Obstacle.defaults = {
     smer             : 0.1,
     bounce           : false,
     static           : false,
+    death            : false,
     name             : "default"
     
 };
