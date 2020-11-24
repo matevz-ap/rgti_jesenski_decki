@@ -135,7 +135,6 @@ export default class Physics {
         }
 
         if(a instanceof Player && b instanceof Obstacle  && (posa[1]>posb[1]) && !b.bounce){
-            // Move node A minimally to avoid collision.
             a.jump = 0;
             const diffa = vec3.sub(vec3.create(), maxb, mina);
             const diffb = vec3.sub(vec3.create(), maxa, minb);

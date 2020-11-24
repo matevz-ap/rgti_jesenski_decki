@@ -56,5 +56,6 @@ Obstacle.defaults = {
     static           : false,
     death            : false,
     name             : "default",
-    startX           : 0
+    startX           : 0,
+    loaded           : false
 };

@@ -92,9 +92,14 @@ class App extends Application {
             this.camera.update(dt, this.player);
         }
 
-        if (this.obstacles !== undefined) {
+        if (this.obstacles && this.player) {
+            //optimizacija
             this.obstacles.forEach(obstacle => {
-                obstacle.update(dt);
+                if(obstacle.loaded) obstacle.update(dt);
+                else if(Math.abs(this.player.translation[2] - obstacle.translation[2]) < 30) {
+                    obstacle.loaded = true;
+                   obstacle.update(dt);
+                }
             });
         }
     
