@@ -22,8 +22,8 @@ export default class Obstacle extends Node {
         if(o.name == "left2right"){
             let acc = vec3.create();
 
-            if(o.translation[0] > 2) o.smer = -0.3;
-            if(o.translation[0] < -2) o.smer = 0.3;
+            if(o.translation[0] - o.startX > 2) o.smer = -0.3;
+            if(o.translation[0] - o.startX < -2) o.smer = 0.3;
     
             const smer = vec3.set(vec3.create(), o.smer, 0, 0);
             vec3.add(acc, acc, smer);
@@ -55,6 +55,6 @@ Obstacle.defaults = {
     bounce           : false,
     static           : false,
     death            : false,
-    name             : "default"
-    
+    name             : "default",
+    startX           : 0
 };

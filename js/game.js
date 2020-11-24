@@ -48,54 +48,10 @@ class App extends Application {
             }
         });
 
-        this.obstacle1 = null;
-        this.obstacle2 = null;
-        this.obstacle3 = null;
-        this.obstacle4 = null;
-        this.obstacle5 = null;
-        this.obstacle6 = null;
-        this.obstacle7 = null;
-        this.obstacle8 = null;
-        this.obstacle9 = null;
-        this.obstacle10 = null;
-        this.obstacle11 = null;
-        this.obstacle12 = null;
-        this.obstacle13 = null;
-        this.obstacle14 = null;
-        this.obstacle15 = null;
-        this.obstacle16 = null;
-        this.obstacle17 = null;
-        this.obstacle18 = null;
-        this.obstacle19 = null;
-        this.obstacle20 = null;
-        this.obstacle21 = null;
-        this.obstacle22 = null;
-        this.obstacle23 = null;
+        this.obstacles = [];
         this.scene.traverse(node => {
             if(node instanceof Obstacle && node.name != "static") {
-                if (this.obstacle1 == null) this.obstacle1 = node;
-                else if(this.obstacle2 == null) this.obstacle2 = node;
-                else if(this.obstacle3 == null) this.obstacle3 = node;
-                else if(this.obstacle4 == null) this.obstacle4 = node;
-                else if(this.obstacle5 == null) this.obstacle5 = node;
-                else if(this.obstacle6 == null) this.obstacle6 = node;
-                else if(this.obstacle7 == null) this.obstacle7 = node;
-                else if(this.obstacle8 == null) this.obstacle8 = node;
-                else if(this.obstacle9 == null )this.obstacle9 = node;
-                else if(this.obstacle10 == null )this.obstacle10 = node;   
-                else if(this.obstacle11 == null )this.obstacle11 = node;   
-                else if(this.obstacle12 == null )this.obstacle12 = node;   
-                else if(this.obstacle13 == null )this.obstacle13 = node;   
-                else if(this.obstacle14 == null )this.obstacle14 = node; 
-                else if(this.obstacle15 == null )this.obstacle15 = node;
-                else if(this.obstacle16 == null )this.obstacle16 = node;
-                else if(this.obstacle17 == null )this.obstacle17 = node;
-                else if(this.obstacle18 == null )this.obstacle18 = node; 
-                else if(this.obstacle19 == null )this.obstacle19 = node;
-                else if(this.obstacle20 == null )this.obstacle20 = node;   
-                else if(this.obstacle21 == null )this.obstacle21 = node;  
-                else if(this.obstacle22 == null )this.obstacle22 = node;  
-                else if(this.obstacle23 == null )this.obstacle23 = node;           
+                this.obstacles.push(node);           
             }                  
         });
 
@@ -136,34 +92,12 @@ class App extends Application {
             this.camera.update(dt, this.player);
         }
 
-        if (this.obstacle9) {
-            this.obstacle1.update(dt);
-            this.obstacle2.update(dt);
-            this.obstacle3.update(dt);
-            this.obstacle4.update(dt);
-            this.obstacle5.update(dt);
-            this.obstacle6.update(dt);
-            this.obstacle7.update(dt);
-            this.obstacle8.update(dt);
-            this.obstacle9.update(dt);
-            this.obstacle10.update(dt);
-            this.obstacle11.update(dt);
-            this.obstacle12.update(dt);
-            this.obstacle13.update(dt);
-            this.obstacle14.update(dt);
-            this.obstacle15.update(dt);
-            this.obstacle16.update(dt);
-            this.obstacle17.update(dt);
-            this.obstacle18.update(dt);
-            this.obstacle19.update(dt);
-            this.obstacle20.update(dt);
-            this.obstacle21.update(dt);
-            this.obstacle22.update(dt);
-            this.obstacle23.update(dt);
-           
+        if (this.obstacles !== undefined) {
+            this.obstacles.forEach(obstacle => {
+                obstacle.update(dt);
+            });
         }
-        
-        
+    
         if (this.physics) {
             this.physics.update(dt);
         }

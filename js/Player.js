@@ -99,31 +99,13 @@ export default class Player extends Node {
             vec3.scale(player.velocity, player.velocity, player.maxSpeed / len);
         }
 
-        //checkpoint4
-        if(player.translation[2] < -290 && player.checkpoint[2] != -292 && player.translation[1] > 0) {
-            player.checkpoint[0] = 0;
-            player.checkpoint[1] = 2;
-            player.checkpoint[2] = -292;
+        //checkpoints
+        let checkpoints = player.checkpoints;
+        let check = player.checkpoint;
+        if(player.translation[2] < checkpoints[check+1][2] && player.translation[1] > 0) {
+            player.checkpoint += 1;
         }
-        //checkpoint3
-        else if(player.translation[2] < -137 &&  player.translation[2] > -290 && player.checkpoint[2] != -139 && player.translation[1] > 0) {
-            player.checkpoint[0] = 0;
-            player.checkpoint[1] = 2;
-            player.checkpoint[2] = -139;
-        }
-         //checkpoint2
-         else if(player.translation[2] < -64 && player.translation[2] > -137 && player.checkpoint[2] != -66 && player.translation[1] > 0) {
-            player.checkpoint[0] = 0;
-            player.checkpoint[1] = 2;
-            player.checkpoint[2] = -66;
-        }
-        //checkpoint1
-        else if(player.translation[2] < -13 && player.translation[2] > -64 && player.checkpoint[2] != -15 && player.translation[1] > 0) {
-            player.checkpoint[0] = 0;
-            player.checkpoint[1] = 2;
-            player.checkpoint[2] = -15;
-        }
-        
+    
         //SPPEEEEEEEED
         if(player.translation[2]<-139){
             player.maxSpeed = 12;
@@ -136,10 +118,10 @@ export default class Player extends Node {
         }
 
         //če umre
-        if (player.translation[1] < player.checkpoint[1]-5 || player.dead) {
-            player.translation[0] = player.checkpoint[0];
-            player.translation[1] = player.checkpoint[1];
-            player.translation[2] = player.checkpoint[2];
+        if (player.translation[1] < checkpoints[check][1] - 7 || player.dead) {
+            player.translation[0] = checkpoints[check][0];
+            player.translation[1] = checkpoints[check][1];
+            player.translation[2] = checkpoints[check][2];
             player.dead = false;
         }
     }
@@ -175,7 +157,8 @@ Player.defaults = {
     acceleration     : 40,
     jump             : 0,
     jumping          : 0,
-    checkpoint       : [0, 1, 0],
+    checkpoint       : 0,
+    checkpoints      : [],
     animation        : 0,
     gravity          : 1.5,
     dead             : false
