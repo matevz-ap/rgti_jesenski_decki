@@ -96,7 +96,7 @@ class App extends Application {
                 if(obstacle.loaded) {
                     if(razdalja < -20) {
                         obstacle.loaded = false; 
-                        obstacdle.velocity = [0, 0, 0];
+                        obstacle.velocity = [0, 0, 0];
                     }
                     else obstacle.update(dt);
                 }

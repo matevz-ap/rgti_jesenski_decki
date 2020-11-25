@@ -35,6 +35,22 @@ export default class Obstacle extends Node {
                     vec3.scale(o.velocity, o.velocity, o.maxSpeed / len);
                 }
         }
+        else if(o.name == "crown"){
+            let acc = vec3.create();
+
+            if(o.translation[1] - o.startX > 2) o.smer = -0.3;
+            if(o.translation[1] - o.startX < -2) o.smer = 0.3;
+    
+            const smer = vec3.set(vec3.create(), 0, o.smer, 0);
+            vec3.add(acc, acc, smer);
+    
+            vec3.scaleAndAdd(o.velocity, o.velocity, acc, dt * o.acceleration);
+    
+            const len = vec3.len(o.velocity);
+                if (len > o.maxSpeed) {
+                    vec3.scale(o.velocity, o.velocity, o.maxSpeed / len);
+                }
+        }
        
       
     }

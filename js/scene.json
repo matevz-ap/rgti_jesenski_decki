@@ -25,7 +25,6 @@
         [0, 2, -138],
         [0, 2, -164],
         [0, 2, -292],
-        [0, 2, -340],
         [0, 2, -400]
       ]
     },
@@ -976,7 +975,7 @@
       "name": "static",
       "type": "obstacle",
       "mesh": 0,
-      "texture": 8,
+      "texture": 9,
       "aabb": {
         "min": [-1, 0, -1],
         "max": [1, 0, 1]
@@ -1219,6 +1218,98 @@
       "death": true
     },
     {
+      "name": "end-left1",
+      "type": "model",
+      "mesh": 0,
+      "texture": 0,
+      "aabb": {
+        "min": [-3, -0.2, -3],
+        "max": [3, 0.2, 3]
+      },
+      "translation": [-7, 1, -335],
+      "rotation": [0, 0, 0],
+      "scale": [3, 0.2, 3]
+    },
+    {
+      "name": "end-right1",
+      "type": "model",
+      "mesh": 0,
+      "texture": 0,
+      "aabb": {
+        "min": [-3, -0.2, -3],
+        "max": [3, 0.2, 3]
+      },
+      "translation": [7, 1, -335],
+      "rotation": [0, 0, 0],
+      "scale": [3, 0.2, 3]
+    },
+    {
+      "name": "end-left2",
+      "type": "model",
+      "mesh": 0,
+      "texture": 0,
+      "aabb": {
+        "min": [-3, -0.2, -3],
+        "max": [3, 0.2, 3]
+      },
+      "translation": [-9, 2, -342],
+      "rotation": [0, 0, 0],
+      "scale": [3, 0.2, 3]
+    },
+    {
+      "name": "end-right2",
+      "type": "model",
+      "mesh": 0,
+      "texture": 0,
+      "aabb": {
+        "min": [-3, -0.2, -3],
+        "max": [3, 0.2, 3]
+      },
+      "translation": [9, 2, -342],
+      "rotation": [0, 0, 0],
+      "scale": [3, 0.2, 3]
+    },
+    {
+      "name": "end-left3",
+      "type": "model",
+      "mesh": 0,
+      "texture": 0,
+      "aabb": {
+        "min": [-3, -0.2, -3],
+        "max": [3, 0.2, 3]
+      },
+      "translation": [-7, 3, -349],
+      "rotation": [0, 0, 0],
+      "scale": [3, 0.2, 3]
+    },
+    {
+      "name": "end-right3",
+      "type": "model",
+      "mesh": 0,
+      "texture": 0,
+      "aabb": {
+        "min": [-3, -0.2, -3],
+        "max": [3, 0.2, 3]
+      },
+      "translation": [7, 3, -349],
+      "rotation": [0, 0, 0],
+      "scale": [3, 0.2, 3]
+    },
+    {
+      "name": "crown",
+      "type": "obstacle",
+      "mesh": 5,
+      "texture": 10,
+      "aabb": {
+        "min": [-2, -2, -2],
+        "max": [2, 2, 2]
+      },
+      "translation": [0, 3, -352],
+      "rotation": [0, 0, 0],
+      "scale": [1, 1, 1],
+      "startX": 3
+    },
+    {
        
       "name": "skybox-left",
       "type": "model",
@@ -1258,12 +1349,22 @@
       "rotation": [0, 0, 3.14],
       "scale": [1, 20, 40]
     },
+    {
+       
+      "name": "skybox-left-4",
+      "type": "model",
+      "mesh": 0,
+      "texture": 2,
+      "translation": [-40, 10, -340],
+      "rotation": [0, 0, 3.14],
+      "scale": [1, 20, 40]
+    },
     { 
       "name": "skybox-front",
       "type": "model",
       "mesh": 0,
       "texture": 2,
-      "translation": [0, 10, -400],
+      "translation": [0, 10, -380],
       "rotation": [0, 1.57, 3.14],
       "scale": [1, 20, 40]
     },
@@ -1300,6 +1401,15 @@
       "mesh": 0,
       "texture": 2,
       "translation": [40, 10, -260],
+      "rotation": [0, 0, 3.14],
+      "scale": [1, 20, 40]
+    },
+    { 
+      "name": "skybox-right-5",
+      "type": "model",
+      "mesh": 0,
+      "texture": 2,
+      "translation": [40, 10, -340],
       "rotation": [0, 0, 3.14],
       "scale": [1, 20, 40]
     },
@@ -1349,6 +1459,15 @@
       "scale": [80, 1, 40]
     },
     { 
+      "name": "skybox-up-5",
+      "type": "model",
+      "mesh": 0,
+      "texture": 2,
+      "translation": [-20, 30, -340],
+      "rotation": [0, 0, 0],
+      "scale": [80, 1, 40]
+    },
+    { 
       "name": "skybox-down",
       "type": "model",
       "mesh": 0,
@@ -1383,6 +1502,15 @@
       "translation": [0, -10, -260],
       "rotation": [0, 0, 0],
       "scale": [40, 1, 40]
+    },
+    { 
+      "name": "skybox-down-3",
+      "type": "model",
+      "mesh": 0,
+      "texture": 3,
+      "translation": [0, -10, -340],
+      "rotation": [0, 0, 0],
+      "scale": [40, 1, 40]
     }
   ],
   "textures": [
@@ -1395,13 +1523,15 @@
     "../common/images/donutTexture.png",
     "../common/images/death.png",
     "../common/images/playerTexture.png",
-    "../common/images/bouncePad.png"
+    "../common/images/bouncePad.png",
+    "../common/images/crownTexture.png"
   ],
   "meshes": [
     "../common/models/cube.json",
     "../common/models/pyramid.json",
     "../common/models/fallGuy.json",
     "../common/models/donut.json",
-    "../common/models/wall.json"
+    "../common/models/wall.json",
+    "../common/models/crown.json"
   ]
 }
