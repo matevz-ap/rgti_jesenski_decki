@@ -100,7 +100,7 @@ class App extends Application {
                     }
                     else obstacle.update(dt);
                 }
-                else if(razdalja > -20 && razdalja < 50) {
+                else if(razdalja > -20 && razdalja < 30) {
                     obstacle.loaded = true;
                     obstacle.update(dt);
                 }

@@ -21,6 +21,7 @@
       "scale": [0.3, 0.3, 0.3],
       "checkpoints": [
         [0, 2, -15],
+        [0, 2, -46],
         [0, 2, -66],
         [0, 2, -138],
         [0, 2, -164],
@@ -1517,7 +1518,7 @@
     "../common/images/bounce.png",
     "../common/images/pop.png",
     "../common/images/skybox/sky1.png",
-    "../common/images/slime.png",
+    "../common/images/skybox/slime.png",
     "../common/images/bounce.png",
     "../common/images/wall.png",
     "../common/images/donutTexture.png",
