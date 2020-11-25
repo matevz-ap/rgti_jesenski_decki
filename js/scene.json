@@ -24,7 +24,9 @@
         [0, 2, -66],
         [0, 2, -138],
         [0, 2, -164],
-        [0, 2, -292]
+        [0, 2, -292],
+        [0, 2, -340],
+        [0, 2, -400]
       ]
     },
     {
@@ -1083,7 +1085,7 @@
       "bounce": true    
     },
     {
-      "name": "checkpoint-wide",
+      "name": "checkpoint-5",
       "type": "model",
       "mesh": 0,
       "texture": 0,
@@ -1094,6 +1096,58 @@
       "translation": [0, 0, -295],
       "rotation": [0, 0, 3.14],
       "scale": [10, 0.2, 3]
+    },
+    {
+      "name": "c5-fence-left1",
+      "type": "model",
+      "mesh": 4,
+      "texture": 5,
+      "aabb": {
+        "min": [-0.3, -1, -2],
+        "max": [0.3, 1, 2]
+      },
+      "translation": [-10, 0, -293.5],
+      "rotation": [0, 1.57, 0],
+      "scale": [0.3, 0.3, 0.3]
+    },
+    {
+      "name": "c5-fence-left2",
+      "type": "model",
+      "mesh": 4,
+      "texture": 5,
+      "aabb": {
+        "min": [-0.3, -1, -2],
+        "max": [0.3, 1, 2]
+      },
+      "translation": [-10, 0, -296.5],
+      "rotation": [0, 1.57, 0],
+      "scale": [0.3, 0.3, 0.3]
+    },
+    {
+      "name": "c5-fence-right1",
+      "type": "model",
+      "mesh": 4,
+      "texture": 5,
+      "aabb": {
+        "min": [-0.3, -1, -2],
+        "max": [0.3, 1, 2]
+      },
+      "translation": [10, 0, -293.5],
+      "rotation": [0, 1.57, 0],
+      "scale": [0.3, 0.3, 0.3]
+    },
+    {
+      "name": "c5-fence-right2",
+      "type": "model",
+      "mesh": 4,
+      "texture": 5,
+      "aabb": {
+        "min": [-0.3, -1, -2],
+        "max": [0.3, 1, 2]
+      },
+      "translation": [10, 0, -296.5],
+      "rotation": [0, 1.57, 0],
+      "scale": [0.3, 0.3, 0.3]
     },
     {
       "name": "checkpoint-long",

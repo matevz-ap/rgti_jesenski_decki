@@ -8,9 +8,6 @@ import Obstacle from './Obstacle.js';
 import SceneLoader from './SceneLoader.js';
 import SceneBuilder from './SceneBuilder.js';
 
-var audio = document.getElementById("player");
-audio.volume = 0;
-
 class App extends Application {
 
     start() {
@@ -95,10 +92,17 @@ class App extends Application {
         if (this.obstacles && this.player) {
             //optimizacija
             this.obstacles.forEach(obstacle => {
-                if(obstacle.loaded) obstacle.update(dt);
-                else if(Math.abs(this.player.translation[2] - obstacle.translation[2]) < 30) {
+                var razdalja = this.player.translation[2] - obstacle.translation[2];
+                if(obstacle.loaded) {
+                    if(razdalja < -20) {
+                        obstacle.loaded = false; 
+                        obstacdle.velocity = [0, 0, 0];
+                    }
+                    else obstacle.update(dt);
+                }
+                else if(razdalja > -20 && razdalja < 50) {
                     obstacle.loaded = true;
-                   obstacle.update(dt);
+                    obstacle.update(dt);
                 }
             });
         }
