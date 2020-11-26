@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jesenski decki</title>
+
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+
+    <script type="text/javascript" src="lib/dat.gui.min.js"></script>
+    <script type="text/javascript" src="lib/gl-matrix-min.js"></script>
+    <script type="module" src="js/game2.js"></script>
+  </head>
+  <body>
+    <audio autoplay loop id="player">
+      <source src="common/sound/EveryoneFalls.mp3" type="audio/mpeg">
+        If you're reading this, audio isn't supported. 
+    </audio>
+    <div class="fullscreen">
+        <canvas></canvas>
+    </div>
+  </body>
+  <script>
+    var audio = document.getElementById("player");
+    audio.volume = 0;
+  </script>
+</html>

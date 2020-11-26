@@ -27,6 +27,10 @@ export default class Player extends Node {
 
     update(dt) {
         const player = this;
+        if(player.level == 2){
+            player.acceleration = 40;
+            player.maxSpeed = 8;
+        }
         const forward = vec3.set(vec3.create(),
               -Math.sin(player.rotation[1]), 0, -Math.cos(player.rotation[1]));
 
@@ -56,11 +60,13 @@ export default class Player extends Node {
         if (this.keys['KeyA']) {
             vec3.sub(acc, acc, right);
         }
+        if (this.keys['ShiftLeft']) {
+            player.jumping = 0;
+        }
         if (this.keys['Space'] && player.jump == 0) {
             player.jump = 1;
-            player.jumping = 30;
-
-            
+            if(player.level == 1)player.jumping = 30;
+            if(player.level == 2)player.jumping = 50;
         }
         if (player.jumping > 0) {
             vec3.add(acc, acc, up);
@@ -105,16 +111,18 @@ export default class Player extends Node {
         if(player.translation[2] < checkpoints[check+1][2] && player.translation[1] > 0) {
             player.checkpoint += 1;
         }
-    
-        //SPPEEEEEEEED
-        if(player.translation[2]<-139){
-            player.maxSpeed = 12;
-            player.acceleration = 100;
-        }
-        //JUUUUUMP
-        if(player.translation[2]<-292){
-            player.maxSpeed = 7;
-            player.acceleration = 40;
+
+        if(player.level == 1){
+            //SPPEEEEEEEED
+            if(player.translation[2]<-139){
+                player.maxSpeed = 12;
+                player.acceleration = 100;
+            }
+            //JUUUUUMP
+            if(player.translation[2]<-292){
+                player.maxSpeed = 7;
+                player.acceleration = 40;
+            }
         }
 
         //če umre
@@ -152,7 +160,7 @@ export default class Player extends Node {
 Player.defaults = {
     velocity         : [0, 0, 0],
     mouseSensitivity : 0.002,
-    maxSpeed         : 5,
+    maxSpeed         : 6,
     friction         : 0.2,
     acceleration     : 40,
     jump             : 0,
@@ -161,5 +169,6 @@ Player.defaults = {
     checkpoints      : [],
     animation        : 0,
     gravity          : 1.5,
-    dead             : false
+    dead             : false,
+    level            : 0
 };

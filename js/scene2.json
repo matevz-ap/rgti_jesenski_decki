@@ -1,0 +1,1416 @@
+{
+    "nodes": [
+      {
+        "type": "camera",
+        "translation": [0, 2, 0],
+        "aspect": 1,
+        "fov": 1.75,
+        "near": 0.01,
+        "far": 100,
+        "rotation": [-0.5, 0, 0]
+      },
+      {
+        "type": "player",
+        "mesh": 2,
+        "texture": 8,
+        "aabb": {
+          "min": [-0.3, -0.3, -0.3],
+          "max": [0.3, 1.4, 0.3]
+        },
+        "translation": [0, 10, 0],
+        "scale": [0.3, 0.3, 0.3],
+        "checkpoints": [
+            [0,2,0],
+            [0,2,-79],
+            [0,2,-109],
+            [0,2,-166],
+            [0,2,-236],
+            [0,2,-400]
+        ],
+        "level": 2
+      },
+      {
+        "name": "start",
+        "type": "model",
+        "mesh": 0,
+        "texture": 0,
+        "aabb": {
+          "min": [-9, 0, -3],
+          "max": [9, 0.2, 3]
+        },
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0],
+        "scale": [9, 0.2, 3]
+      },
+      {
+        "name": "start-fence-back",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-2, 0, 0],
+          "max": [2, 0.3, 0.3]
+        },
+        "translation": [0, 0, 3],
+        "rotation": [0, 0, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "start-fence-back-l1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-2, 0, 0],
+          "max": [2, 0.3, 0.3]
+        },
+        "translation": [-3, 0, 3],
+        "rotation": [0, 0, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "start-fence-back-l2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-2, 0, 0],
+          "max": [2, 0.3, 0.3]
+        },
+        "translation": [-6, 0, 3],
+        "rotation": [0, 0, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "start-fence-back-r1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-2, 0, 0],
+          "max": [2, 0.3, 0.3]
+        },
+        "translation": [3, 0, 3],
+        "rotation": [0, 0, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "start-fence-back-r2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-2, 0, 0],
+          "max": [2, 0.3, 0.3]
+        },
+        "translation": [6, 0, 3],
+        "rotation": [0, 0, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "long",
+        "type": "model",
+        "mesh": 0,
+        "texture": 0,
+        "aabb": {
+          "min": [-3, -0.2, -10],
+          "max": [3, 0.2, 10]
+        },
+        "translation": [0, 0, -14],
+        "rotation": [0, 0 , 0],
+        "scale": [3, 0.2, 10]
+      },
+      {
+        "name": "back2forth",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-3, -0.5, -0.2],
+          "max": [3, 0.5, 0.2]
+        },
+        "translation": [0, 0.6, -8],
+        "scale": [3, 0.5, 0.2],
+        "bounce": false,
+        "startX": -8
+      },
+      {
+        "name": "back2forth",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-3, -0.5, -0.2],
+          "max": [3, 0.5, 0.2]
+        },
+        "translation": [0, 0.6, -14],
+        "scale": [3, 0.5, 0.2],
+        "bounce": false,
+        "startX": -14
+      },
+      {
+        "name": "back2forth",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-3, -0.5, -0.2],
+          "max": [3, 0.5, 0.2]
+        },
+        "translation": [0, 0.6, -20],
+        "scale": [3, 0.5, 0.2],
+        "bounce": false,
+        "startX": -20    
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-0.2, -0.6, -10],
+          "max": [0.2, 0.6, 10]
+        },
+        "translation": [0, 2.5, -14],
+        "scale": [0.2, 0.6, 10],
+        "bounce": false
+      },
+      {
+        "name": "floor-1",
+        "type": "model",
+        "mesh": 0,
+        "texture": 0,
+        "aabb": {
+          "min": [-10, 0, -3],
+          "max": [10, 0.2, 3]
+        },
+        "translation": [0, 0, -30],
+        "rotation": [0, 0, 0],
+        "scale": [10, 0.2, 3]
+      },
+      {
+        "name": "c1-fence-left1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [-10, 0, -28.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-left2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [-10, 0, -31.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-right1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [10, 0, -28.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-right2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [10, 0, -31.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [-3, 0, -38],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "bounce": true        
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-0.2, -3, -20],
+          "max": [0.2, 3, 20]
+        },
+        "translation": [0, 7, -56],
+        "scale": [0.2, 3, 20],
+        "bounce": false
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [3, 0, -48],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "bounce": true        
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [-3, 0, -58],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "bounce": true        
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [3, 0, -68],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "bounce": true        
+      },
+      {
+        "name": "checkpoint-1",
+        "type": "model",
+        "mesh": 0,
+        "texture": 0,
+        "aabb": {
+          "min": [-10, 0, -3],
+          "max": [10, 0.2, 3]
+        },
+        "translation": [0, 0, -80],
+        "rotation": [0, 0, 0],
+        "scale": [10, 0.2, 3]
+      },
+      {
+        "name": "c1-fence-left1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [-10, 0.5, -78.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-left2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [-10, 0.5, -81.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-right1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [10, 0.5, -78.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-right2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [10, 0.5, -81.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "floor-2",
+        "type": "model",
+        "mesh": 0,
+        "texture": 0,
+        "aabb": {
+          "min": [-10, 0, -10],
+          "max": [10, 0.2, 10]
+        },
+        "translation": [0, 0, -95],
+        "rotation": [0, 0, 0],
+        "scale": [10, 0.2, 10]
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-0.2, -0.5, -10],
+          "max": [0.2, 0.5, 10]
+        },
+        "translation": [-6, 0.6, -95],
+        "rotation": [0, 0, 0],
+        "scale": [0.2, 0.5, 10],
+        "death": true,
+        "startX": -6
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-0.2, -0.5, -10],
+          "max": [0.2, 0.5, 10]
+        },
+        "translation": [0, 0.6, -95],
+        "rotation": [0, 0, 0],
+        "scale": [0.2, 0.5, 10],
+        "death": true,
+        "startX": 0
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-0.2, -0.5, -10],
+          "max": [0.2, 0.5, 10]
+        },
+        "translation": [6, 0.6, -95],
+        "rotation": [0, 0, 0],
+        "scale": [0.2, 0.5, 10],
+        "death": true,
+        "startX": 6
+      },
+      {
+        "name": "back2forth",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-10, -0.5, -0.2],
+          "max": [10, 0.5, 0.2]
+        },
+        "translation": [0, 0.6, -90],
+        "rotation": [0, 0, 0],
+        "scale": [10, 0.5, 0.2],
+        "death": true,
+        "startX": -90
+      },
+      {
+        "name": "back2forth",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-10, -0.5, -0.2],
+          "max": [10, 0.5, 0.2]
+        },
+        "translation": [0, 0.6, -96],
+        "rotation": [0, 0, 0],
+        "scale": [10, 0.5, 0.2],
+        "death": true,
+        "startX": -96
+      },
+      {
+        "name": "back2forth",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-10, -0.5, -0.2],
+          "max": [10, 0.5, 0.2]
+        },
+        "translation": [0, 0.6, -102],
+        "rotation": [0, 0, 0],
+        "scale": [10, 0.5, 0.2],
+        "death": true,
+        "startX": -102
+      },
+      {
+        "name": "checkpoint-2",
+        "type": "model",
+        "mesh": 0,
+        "texture": 0,
+        "aabb": {
+          "min": [-10, 0, -3],
+          "max": [10, 0.2, 3]
+        },
+        "translation": [0, 0, -110],
+        "rotation": [0, 0, 0],
+        "scale": [10, 0.2, 3]
+      },
+      {
+        "name": "c1-fence-left1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [-10, 0.5, -108.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-left2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [-10, 0.5, -111.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-right1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [10, 0.5, -108.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-right2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [10, 0.5, -111.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "long",
+        "type": "model",
+        "mesh": 0,
+        "texture": 0,
+        "aabb": {
+          "min": [-3, -0.2, -20],
+          "max": [3, 0.2, 20]
+        },
+        "translation": [0, 0, -135],
+        "rotation": [0, 0 , 0],
+        "scale": [3, 0.2, 20]
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-1, -0.5, -0.5],
+          "max": [1, 0.5, 0.5]
+        },
+        "translation": [0, 0.6, -119],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.5, 0.5],
+        "startX": 0
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-3, -0.5, -0.5],
+          "max": [3, 0.5, 0.5]
+        },
+        "translation": [4, 1.6, -119],
+        "rotation": [0, 0, 0],
+        "scale": [3, 0.5, 0.5],
+        "startX": 4,
+        "death": true
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-3, -0.5, -0.5],
+          "max": [3, 0.5, 0.5]
+        },
+        "translation": [-4, 1.6, -119],
+        "rotation": [0, 0, 0],
+        "scale": [3, 0.5, 0.5],
+        "startX": -4,
+        "death": true
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-1, -0.5, -0.5],
+          "max": [1, 0.5, 0.5]
+        },
+        "translation": [0, 0.6, -126],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.5, 0.5],
+        "startX": 0
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-3, -0.5, -0.5],
+          "max": [3, 0.5, 0.5]
+        },
+        "translation": [4, 1.6, -126],
+        "rotation": [0, 0, 0],
+        "scale": [3, 0.5, 0.5],
+        "startX": 4,
+        "death": true
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-3, -0.5, -0.5],
+          "max": [3, 0.5, 0.5]
+        },
+        "translation": [-4, 1.6, -126],
+        "rotation": [0, 0, 0],
+        "scale": [3, 0.5, 0.5],
+        "startX": -4,
+        "death": true
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-1, -0.5, -0.5],
+          "max": [1, 0.5, 0.5]
+        },
+        "translation": [0, 0.6, -133],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.5, 0.5],
+        "startX": 0
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-3, -0.5, -0.5],
+          "max": [3, 0.5, 0.5]
+        },
+        "translation": [4, 1.6, -133],
+        "rotation": [0, 0, 0],
+        "scale": [3, 0.5, 0.5],
+        "startX": 4,
+        "death": true
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-3, -0.5, -0.5],
+          "max": [3, 0.5, 0.5]
+        },
+        "translation": [-4, 1.6, -133],
+        "rotation": [0, 0, 0],
+        "scale": [3, 0.5, 0.5],
+        "startX": -4,
+        "death": true
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-1, -0.5, -0.5],
+          "max": [1, 0.5, 0.5]
+        },
+        "translation": [0, 0.6, -140],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.5, 0.5],
+        "startX": 0
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-3, -0.5, -0.5],
+          "max": [3, 0.5, 0.5]
+        },
+        "translation": [4, 1.6, -140],
+        "rotation": [0, 0, 0],
+        "scale": [3, 0.5, 0.5],
+        "startX": 4,
+        "death": true
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-3, -0.5, -0.5],
+          "max": [3, 0.5, 0.5]
+        },
+        "translation": [-4, 1.6, -140],
+        "rotation": [0, 0, 0],
+        "scale": [3, 0.5, 0.5],
+        "startX": -4,
+        "death": true
+      },
+      {
+        "name": "static",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [0, 0.5, -149],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "bounce": true        
+      },
+      {
+        "name": "up2down",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 7,
+        "aabb": {
+          "min": [-3, -3, -1],
+          "max": [3, -3, 1]
+        },
+        "translation": [0, 0, -156],
+        "rotation": [0, 0, 0],
+        "scale": [3, 3, 1],
+        "death": true,     
+        "startX": 4   
+      },
+      {
+        "name": "checkpoint-3",
+        "type": "model",
+        "mesh": 0,
+        "texture": 0,
+        "aabb": {
+          "min": [-10, 0, -3],
+          "max": [10, 0.2, 3]
+        },
+        "translation": [0, 0, -166],
+        "rotation": [0, 0, 0],
+        "scale": [10, 0.2, 3]
+      },
+      {
+        "name": "c1-fence-left1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [-10, 0.5, -164.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-left2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [-10, 0.5, -167.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-right1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [10, 0.5, -164.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-right2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [10, 0.5, -167.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "static",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [0, 0, -175],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "bounce": true        
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-2, -6, 1],
+          "max": [2, 6, 1]
+        },
+        "translation": [2, 2, -185],
+        "rotation": [0, 0, 0],
+        "scale": [2, 6, 1],
+        "startX": -1
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-2, -6, 1],
+          "max": [2, 6, 1]
+        },
+        "translation": [-2, 2, -185],
+        "rotation": [0, 0, 0],
+        "scale": [2, 6, 1],
+        "startX": 1
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [0, 0, -190],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "bounce": true        
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-2, -6, 1],
+          "max": [2, 6, 1]
+        },
+        "translation": [2, 2, -200],
+        "rotation": [0, 0, 0],
+        "scale": [2, 6, 1],
+        "startX": -1
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-2, -6, 1],
+          "max": [2, 6, 1]
+        },
+        "translation": [-2, 2, -200],
+        "rotation": [0, 0, 0],
+        "scale": [2, 6, 1],
+        "startX": 1
+      },
+      {
+        "name": "static",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [0, 0, -205],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "bounce": true        
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-2, -6, 1],
+          "max": [2, 6, 1]
+        },
+        "translation": [2, 2, -215],
+        "rotation": [0, 0, 0],
+        "scale": [2, 6, 1],
+        "startX": -1
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-2, -6, 1],
+          "max": [2, 6, 1]
+        },
+        "translation": [-2, 2, -215],
+        "rotation": [0, 0, 0],
+        "scale": [2, 6, 1],
+        "startX": 1
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [0, 0, -220],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "bounce": true        
+      },
+      {
+        "name": "checkpoint-4",
+        "type": "model",
+        "mesh": 0,
+        "texture": 0,
+        "aabb": {
+          "min": [-10, 0, -3],
+          "max": [10, 0.2, 3]
+        },
+        "translation": [0, 0, -236],
+        "rotation": [0, 0, 0],
+        "scale": [10, 0.2, 3]
+      },
+      {
+        "name": "c1-fence-left1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [-10, 0.5, -234.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-left2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [-10, 0.5, -237.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-right1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [10, 0.5, -234.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-right2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [10, 0.5, -237.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "back2forth",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [3, 0, -245],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "bounce": true,
+        "startX": -245        
+      },
+      {
+        "name": "up2down",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [-3, 0, -243],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "startX":2        
+      },
+      {
+        "name": "up2down",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [-4, 4, -250],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "startX":4        
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [3, 2, -260],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "bounce": true,
+        "startX": 2       
+      },
+      {
+        "name": "up2down",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [0, 2, -270],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],
+        "startX":2        
+      },
+      {
+        "name": "static",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [-4, 4, -275],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1]     
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [0, -1, -285],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],  
+        "bounce": true   
+      },
+      {
+        "name": "back2forth",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [2, 0, -299],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],  
+        "bounce": true,   
+        "startX": -293
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [-2, 1, -300],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],  
+        "bounce": true,   
+        "startX": 2
+      },
+      {
+        "name": "up2down",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [-2, 4, -312],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],     
+        "startX": 2
+      },
+      {
+        "name": "up2down",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 1,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [-2, 4, -314],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],     
+        "startX": 3
+      },
+      {
+         
+        "name": "skybox-left",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [-40, 10, -20],
+        "rotation": [0, 0, 3.14],
+        "scale": [1, 20, 40]
+      },
+      {
+         
+        "name": "skybox-left-2",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [-40, 10, -100],
+        "rotation": [0, 0, 3.14],
+        "scale": [1, 20, 40]
+      },
+      {
+         
+        "name": "skybox-left-3",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [-40, 10, -180],
+        "rotation": [0, 0, 3.14],
+        "scale": [1, 20, 40]
+      },
+      {
+         
+        "name": "skybox-left-3",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [-40, 10, -260],
+        "rotation": [0, 0, 3.14],
+        "scale": [1, 20, 40]
+      },
+      {
+         
+        "name": "skybox-left-4",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [-40, 10, -340],
+        "rotation": [0, 0, 3.14],
+        "scale": [1, 20, 40]
+      },
+      { 
+        "name": "skybox-front",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [0, 10, -380],
+        "rotation": [0, 1.57, 3.14],
+        "scale": [1, 20, 40]
+      },
+      { 
+        "name": "skybox-right",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [40, 10, -20],
+        "rotation": [0, 0, 3.14],
+        "scale": [1, 20, 40]
+      },
+      { 
+        "name": "skybox-right-2",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [40, 10, -100],
+        "rotation": [0, 0, 3.14],
+        "scale": [1, 20, 40]
+      },
+      { 
+        "name": "skybox-right-3",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [40, 10, -180],
+        "rotation": [0, 0, 3.14],
+        "scale": [1, 20, 40]
+      },
+      { 
+        "name": "skybox-right-4",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [40, 10, -260],
+        "rotation": [0, 0, 3.14],
+        "scale": [1, 20, 40]
+      },
+      { 
+        "name": "skybox-right-5",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [40, 10, -340],
+        "rotation": [0, 0, 3.14],
+        "scale": [1, 20, 40]
+      },
+      { 
+        "name": "skybox-back",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [0, 10, 20],
+        "rotation": [0, 1.5708, 3.14],
+        "scale": [1, 20, 40]
+      },
+      { 
+        "name": "skybox-up",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [-20, 30, -20],
+        "rotation": [0, 0, 0],
+        "scale": [80, 1, 40]
+      },
+      { 
+        "name": "skybox-up-2",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [-20, 30, -100],
+        "rotation": [0, 0, 0],
+        "scale": [80, 1, 40]
+      },
+      { 
+        "name": "skybox-up-3",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [-20, 30, -180],
+        "rotation": [0, 0, 0],
+        "scale": [80, 1, 40]
+      },
+      { 
+        "name": "skybox-up-4",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [-20, 30, -260],
+        "rotation": [0, 0, 0],
+        "scale": [80, 1, 40]
+      },
+      { 
+        "name": "skybox-up-5",
+        "type": "model",
+        "mesh": 0,
+        "texture": 2,
+        "translation": [-20, 30, -340],
+        "rotation": [0, 0, 0],
+        "scale": [80, 1, 40]
+      },
+      { 
+        "name": "skybox-down",
+        "type": "model",
+        "mesh": 0,
+        "texture": 3,
+        "translation": [0, -10, -20],
+        "rotation": [0, 0, 0],
+        "scale": [40, 1, 40]
+      },
+      { 
+        "name": "skybox-down-2",
+        "type": "model",
+        "mesh": 0,
+        "texture": 3,
+        "translation": [0, -10, -100],
+        "rotation": [0, 0, 0],
+        "scale": [40, 1, 40]
+      },
+      { 
+        "name": "skybox-down-3",
+        "type": "model",
+        "mesh": 0,
+        "texture": 3,
+        "translation": [0, -10, -180],
+        "rotation": [0, 0, 0],
+        "scale": [40, 1, 40]
+      },
+      { 
+        "name": "skybox-down-3",
+        "type": "model",
+        "mesh": 0,
+        "texture": 3,
+        "translation": [0, -10, -260],
+        "rotation": [0, 0, 0],
+        "scale": [40, 1, 40]
+      },
+      { 
+        "name": "skybox-down-3",
+        "type": "model",
+        "mesh": 0,
+        "texture": 3,
+        "translation": [0, -10, -340],
+        "rotation": [0, 0, 0],
+        "scale": [40, 1, 40]
+      }
+    ],
+    "textures": [
+      "../common/images/bounce.png",
+      "../common/images/pop.png",
+      "../common/images/skybox/sky1.png",
+      "../common/images/skybox/slime.png",
+      "../common/images/bounce.png",
+      "../common/images/wall.png",
+      "../common/images/donutTexture.png",
+      "../common/images/death.png",
+      "../common/images/playerTexture.png",
+      "../common/images/bouncePad.png",
+      "../common/images/crownTexture.png"
+    ],
+    "meshes": [
+      "../common/models/cube.json",
+      "../common/models/pyramid.json",
+      "../common/models/fallGuy.json",
+      "../common/models/donut.json",
+      "../common/models/wall.json",
+      "../common/models/crown.json"
+    ]
+  }
+  

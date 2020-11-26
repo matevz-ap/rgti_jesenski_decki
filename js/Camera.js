@@ -14,7 +14,7 @@ export default class Camera extends Node {
         this.projection = mat4.create();
         this.updateProjection();
 
-        this.mousemoveHandler = this.mousemoveHandler.bind(this);
+        //this.mousemoveHandler = this.mousemoveHandler.bind(this);
         this.keydownHandler = this.keydownHandler.bind(this);
         this.keyupHandler = this.keyupHandler.bind(this);
         this.keys = {};
