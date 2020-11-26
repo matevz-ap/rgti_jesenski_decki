@@ -133,6 +133,7 @@ export default class Physics {
         if (!isColliding) {
             return;
         }
+        if(a instanceof Player && b instanceof Obstacle && b.name === "crown") window.location.href = "./victory.html";
         if(a instanceof Player && b instanceof Obstacle  && (posa[1]>posb[1]) && !b.bounce && !b.death){
             // Move node A minimally to avoid collision.
             a.jump = 0;
