@@ -58,7 +58,7 @@ class App extends Application {
         this.renderer.prepare(this.scene);
     }
 
-    enableCamera() {
+    enableControls() {
         this.canvas.requestPointerLock();
     }
 
@@ -136,5 +136,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.querySelector('canvas');
     const app = new App(canvas);
     const gui = new dat.GUI();
-    gui.add(app, 'enableCamera');
+    gui.add(app, 'enableControls');
 });

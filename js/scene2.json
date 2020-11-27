@@ -17,7 +17,7 @@
           "min": [-0.3, -0.3, -0.3],
           "max": [0.3, 1.4, 0.3]
         },
-        "translation": [0, 10, 0],
+        "translation": [0, 2, 0],
         "scale": [0.3, 0.3, 0.3],
         "checkpoints": [
             [0,2,0],
@@ -26,6 +26,7 @@
             [0,2,-109],
             [0,2,-166],
             [0,2,-236],
+            [0,7,-321],
             [0,2,-400]
         ],
         "level": 2
@@ -1154,7 +1155,7 @@
           "min": [-1, 0, -1],
           "max": [1, 0, 1]
         },
-        "translation": [-2, 1, -300],
+        "translation": [-2, 1, -305],
         "rotation": [0, 0, 0],
         "scale": [1, 0.2, 1],  
         "bounce": true,   
@@ -1189,6 +1190,101 @@
         "startX": 3
       },
       {
+        "name": "checkpoint-5",
+        "type": "model",
+        "mesh": 0,
+        "texture": 0,
+        "aabb": {
+          "min": [-10, 0, -3],
+          "max": [10, 0.2, 3]
+        },
+        "translation": [0, 5, -320],
+        "rotation": [0, 0, 0],
+        "scale": [10, 0.2, 3]
+      },
+      {
+        "name": "c1-fence-left1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [-10, 5.5, -321.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-left2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [-10, 5.5, -318.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-right1",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [10, 5.5, -321.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "c1-fence-right2",
+        "type": "model",
+        "mesh": 4,
+        "texture": 5,
+        "aabb": {
+          "min": [-0.3, -1, -2],
+          "max": [0.3, 1, 2]
+        },
+        "translation": [10, 5.5, -318.5],
+        "rotation": [0, 1.57, 0],
+        "scale": [0.3, 0.3, 0.3]
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [-2, 1, -330],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],  
+        "bounce": true,   
+        "startX": 2
+      },
+      {
+        "name": "left2right",
+        "type": "obstacle",
+        "mesh": 0,
+        "texture": 9,
+        "aabb": {
+          "min": [-1, 0, -1],
+          "max": [1, 0, 1]
+        },
+        "translation": [-2, 2, -341],
+        "rotation": [0, 0, 0],
+        "scale": [1, 0.2, 1],  
+        "bounce": true,   
+        "startX": 2
+      },
+      {
         "name": "crown",
         "type": "obstacle",
         "mesh": 5,
@@ -1197,7 +1293,7 @@
           "min": [-1.5, -1.5, -1.5],
           "max": [1.5, 1.5, 1.5]
         },
-        "translation": [0, 3, -324],
+        "translation": [0, 3, -355],
         "rotation": [0, 0, 0],
         "scale": [1, 1, 1],
         "startX": 3

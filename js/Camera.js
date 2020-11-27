@@ -39,7 +39,7 @@ export default class Camera extends Node {
     disable() {
         document.removeEventListener('mousemove', this.mousemoveHandler);
     }
-
+    /*
     mousemoveHandler(e) {
         const dx = e.movementX;
         const dy = e.movementY;
@@ -61,7 +61,7 @@ export default class Camera extends Node {
 
         c.rotation[1] = ((c.rotation[1] % twopi) + twopi) % twopi;
     }
-
+    */
     keydownHandler(e) {
         this.keys[e.code] = true;
     }
@@ -69,6 +69,7 @@ export default class Camera extends Node {
     keyupHandler(e) {
         this.keys[e.code] = false;
     }
+    
 
 }
 
